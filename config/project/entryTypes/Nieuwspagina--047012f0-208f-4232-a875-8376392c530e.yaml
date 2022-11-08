@@ -1,0 +1,79 @@
+fieldLayouts:
+  20cc3e40-8661-4f3e-a7ea-f70e5edbb397:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 83ef56b7-287e-479f-a5e1-7dba540dbba3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 18f61b71-9a64-4293-9a38-968dd55c5e91 # ContactPaginaTekst
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fabd2bb7-ce1e-4d76-baf3-2616285746ad
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 6b688087-39cf-4551-9525-50ac4ec864da # Headline
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f1a4880f-cffd-4137-bd6e-6f45bca9dc92
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9aaba2fb-2158-4ef3-b23f-48b48f7c89d3 # Preview Image 
+            instructions: null
+            label: abc
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5c24b840-29a2-4324-867f-2e3eb5c0e879
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 0e18c456-e29c-45b9-a0d2-20f2b0d6746d
+        userCondition: null
+handle: Nieuwspagina
+hasTitleField: true
+name: NIeuwspagina
+section: 806c152e-3094-4e0c-b72f-69950132c3ff # NIeuwspagina
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

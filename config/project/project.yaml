@@ -1,0 +1,60 @@
+dateModified: 1667915082
+email:
+  fromEmail: Roy12overbeek@hotmail.com
+  fromName: Stage
+  transportType: craft\mail\transportadapters\Sendmail
+fs:
+  assets:
+    hasUrls: true
+    name: assets
+    settings:
+      path: '@root/htdocs/web/assets'
+    type: craft\fs\Local
+    url: '@web/web/assets'
+meta:
+  __names__:
+    0c5e33bf-0faa-4579-8def-ee5afea13979: 'Content blocks' # Content blocks
+    3cb2174e-8b70-4419-9324-8292533a014c: Link # Link
+    6b688087-39cf-4551-9525-50ac4ec864da: Headline # Headline
+    7ab04376-05db-45f0-99a3-539c362ef563: Stage # Stage
+    9aaba2fb-2158-4ef3-b23f-48b48f7c89d3: 'Preview Image ' # Preview Image 
+    18f61b71-9a64-4293-9a38-968dd55c5e91: ContactPaginaTekst # ContactPaginaTekst
+    60af84eb-ac08-4bcd-8404-91d42ff8ba2a: 'Image Block' # Image Block
+    68fc4b1b-ee3a-4402-a858-73ee024b6726: 'Link Group ' # Link Group 
+    73b121f5-9d69-440c-bd92-0afabb084fde: Submenucontact # Submenucontact
+    155bba92-5c79-4460-aed1-3cd69e769831: 'Home page' # Home page
+    190f069b-edfb-45b9-9fc6-bedf27af04b5: Contactpagina # Contactpagina
+    624e1077-2ee5-493b-8a3f-626fadbddfd9: 'Link Item' # Link Item
+    655b4f52-57a4-4188-a29a-2a5924134a13: SubmenuContact # SubmenuContact
+    806c152e-3094-4e0c-b72f-69950132c3ff: NIeuwspagina # NIeuwspagina
+    808f6120-3f50-4b1b-8dd5-eaa807f1dc23: 'Rich text block' # Rich text block
+    18657bfc-10cb-4555-9764-d90ff47a472e: Contactformulier # Contactformulier
+    047012f0-208f-4232-a875-8376392c530e: NIeuwspagina # NIeuwspagina
+    90734f86-d637-45c2-8dff-7265a51843ca: Common # Common
+    4653194c-0478-4c38-8488-2887e8272276: 'Home page' # Home page
+    a070c64f-5c6e-4964-9ee8-cf31a84611eb: Image # Image
+    b5f9038a-af7a-4077-b032-b9ae4a5977d0: Stage # Stage
+    b9eab774-ce40-4462-a7d9-23a0be96650f: public # public
+    e1236076-4f78-4de7-adc2-d1f1dbcfdba7: navigation # navigation
+    ecc43404-6e23-417e-816e-98745ef5f49a: 'Text ' # Text 
+plugins:
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  typedlinkfield:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+system:
+  edition: solo
+  live: true
+  name: Stage
+  schemaVersion: 4.0.0.9
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

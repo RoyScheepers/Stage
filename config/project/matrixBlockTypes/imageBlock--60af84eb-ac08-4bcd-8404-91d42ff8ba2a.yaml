@@ -1,0 +1,74 @@
+field: 0c5e33bf-0faa-4579-8def-ee5afea13979 # Content blocks
+fieldLayouts:
+  9bf051ec-3c66-4bae-aa19-9622b4af2016:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: a070c64f-5c6e-4964-9ee8-cf31a84611eb # Image
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3b943e12-c673-49e6-9ced-ed3037650312
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 93a495ef-a46f-449d-869d-232da1d95f55
+        userCondition: null
+fields:
+  a070c64f-5c6e-4964-9ee8-cf31a84611eb: # Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: null
+    name: Image
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:b9eab774-ce40-4462-a7d9-23a0be96650f' # public
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maxRelations: 1
+      minRelations: null
+      previewMode: full
+      restrictFiles: true
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:b9eab774-ce40-4462-a7d9-23a0be96650f' # public
+      restrictedLocationSubpath: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Asset
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\assets\AssetCondition
+      selectionLabel: null
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: imageBlock
+name: 'Image Block'
+sortOrder: 1

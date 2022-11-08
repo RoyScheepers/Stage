@@ -4,40 +4,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta charset="utf-8" />
         <title>
-            Welcome to Craft CMS
-                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                        
-                                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                        
-                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                        
-                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                        
-                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                
-                                                                                                                                                                                                                    
-                                                                                                                                                                                                        
-                                                                                                                                                                                            
-                                                                                                                                                                                
-                                                                                                                                                                    
-                                                                                                                                                        
-                                                                                                                                            
-                                                                                                                                
-                                                                                                                    
-                                                                                                        
-                                                                                            
-                                                                                
-                                                                    
-                                                        
-                                            
-                                
-                    
+       Welkom op de camping
         </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
         <meta name="referrer" content="origin-when-cross-origin" />
@@ -231,9 +198,9 @@
             <div id="modal">
                 <div id="main">
                     <div class="content">
-                    <h1>
-                        {{ entry.title }}
-                    </h1>
+                        <h1>
+                            {{ entry.title }}
+                        </h1>
                         <ul>
                             {% set nieuwspagina =  craft.entries()
                 .section('nieuwspagina')
@@ -244,22 +211,20 @@
                                 <p>
                                     {{ tekst.nieuwspaginatekst1 }}
                                 </p>
-                                
-                                
 
-                                {% endfor %}
-                            </ul>
-                        </div>
+                            {% endfor %}
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div id="container">
+        </div>
+        <div id="container">
             <div id="modal">
                 <div id="main">
                     <div class="content">
-                    <h1>
-                        {{ entry.title }}
-                    </h1>
+                        <h1>
+                            {{ entry.title }}
+                        </h1>
                         <ul>
                             {% set nieuwspagina =  craft.entries()
                 .section('nieuwspagina')
@@ -278,6 +243,7 @@
                     </div>
                 </div>
             </div>
+        </body>
     </body>
 </html>
 {# {% set previewImage = entry.previewImage.one() %}

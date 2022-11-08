@@ -1,12 +1,12 @@
-columnSuffix: ccjvecmx
+columnSuffix: azkouyhe
 contentColumnType: text
 fieldGroup: 90734f86-d637-45c2-8dff-7265a51843ca # Common
-handle: contactpaginatekst
+handle: nieuwspaginatekst3
 instructions: null
-name: ContactPaginaTekst
+name: 'Nieuwspaginatekst 3'
 searchable: false
 settings:
-  availableTransforms: ''
+  availableTransforms: '*'
   availableVolumes: '*'
   columnType: text
   configSelectionMode: choose
@@ -18,9 +18,9 @@ settings:
   removeEmptyTags: false
   removeInlineStyles: false
   removeNbsp: false
-  showHtmlButtonForNonAdmins: false
+  showHtmlButtonForNonAdmins: true
   showUnpermittedFiles: false
-  showUnpermittedVolumes: false
+  showUnpermittedVolumes: true
   uiMode: enlarged
 translationKeyFormat: null
 translationMethod: none

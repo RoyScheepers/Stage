@@ -5,6 +5,7 @@
         <meta charset="utf-8" />
         <title>
             Welcome to Craft CMS
+                                                                                                                                                                                                                                                                                                                                                                                                                    
                                                                                                                                                                                                                                                                                                                                                                                                         
                                                                                                                                                                                                                                                                                                                                                                                             
                                                                                                                                                                                                                                                                                                                                                                                 
@@ -227,16 +228,59 @@
             </div>
         </header>
         <div id="container">
-        <div>
-            <h1>
-                {{ entry.title }}
-            </h1>
-        </div>
-        
+            <div id="modal">
+                <div id="main">
+                    <div class="content">
+                    <h1>
+                        {{ entry.title }}
+                    </h1>
+                        <ul>
+                            {% set nieuwspagina =  craft.entries()
+                .section('nieuwspagina')
+                .limit(10)                 
+                .all() %}
+                            {% for tekst in nieuwspagina %}
 
-        {% set previewImage = entry.previewImage.one() %}
+                                <p>
+                                    {{ tekst.nieuwspaginatekst1 }}
+                                </p>
+                                
+                                
 
-        <img src="{{ previewImage.getUrl('') }}" alt="{{ previewImage.title }}">
-    </div>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="container">
+            <div id="modal">
+                <div id="main">
+                    <div class="content">
+                    <h1>
+                        {{ entry.title }}
+                    </h1>
+                        <ul>
+                            {% set nieuwspagina =  craft.entries()
+                .section('nieuwspagina')
+                .limit(10)                 
+                .all() %}
+                            {% for tekst in nieuwspagina %}
+
+                                <p>
+                                    {{ tekst.nieuwspaginatekst2 }}
+                                </p>
+                                <p>
+
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </body>
 </html>
+{# {% set previewImage = entry.previewImage.one() %}
+
+        <img src="{{ previewImage.getUrl('') }}" alt="{{ previewImage.title }}">
+#}

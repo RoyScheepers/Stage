@@ -1,9 +1,9 @@
-columnSuffix: ccjvecmx
+columnSuffix: uixeeinh
 contentColumnType: text
 fieldGroup: 90734f86-d637-45c2-8dff-7265a51843ca # Common
-handle: contactpaginatekst
+handle: nieuwspaginatekst2
 instructions: null
-name: ContactPaginaTekst
+name: 'Nieuwspaginatekst 2'
 searchable: false
 settings:
   availableTransforms: ''

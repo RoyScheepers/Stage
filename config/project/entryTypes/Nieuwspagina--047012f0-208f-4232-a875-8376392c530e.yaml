@@ -32,47 +32,59 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
-            fieldUid: 18f61b71-9a64-4293-9a38-968dd55c5e91 # ContactPaginaTekst
+            fieldUid: b9744da2-0f38-4a28-8e06-55ca5eb8a847 # Nieuwspaginatekst 1
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: fabd2bb7-ce1e-4d76-baf3-2616285746ad
+            uid: 1b9921f7-26cb-4f72-8ab9-d87cace044e7
             userCondition: null
             warning: null
             width: 100
-          -
-            elementCondition: null
-            fieldUid: 6b688087-39cf-4551-9525-50ac4ec864da # Headline
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: f1a4880f-cffd-4137-bd6e-6f45bca9dc92
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: 9aaba2fb-2158-4ef3-b23f-48b48f7c89d3 # Preview Image 
-            instructions: null
-            label: abc
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 5c24b840-29a2-4324-867f-2e3eb5c0e879
-            userCondition: null
-            warning: null
-            width: 100
-        name: Content
+        name: 'tekst 1'
         uid: 0e18c456-e29c-45b9-a0d2-20f2b0d6746d
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: fcdfa729-1e41-4d6f-a28f-fb7a3ee2ddf6 # Nieuwspaginatekst 2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3d085658-b2ed-4c00-ac85-bf7dc11891fb
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'tekst 2'
+        uid: 4720509c-819b-4e76-a1fc-7529eead644d
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 7282b0d6-cd9c-452e-9486-93188a764195 # Nieuwspaginatekst 3
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 620be90d-21cd-46ed-b9a9-cf75fd943867
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'tekst 3'
+        uid: c8819879-7935-4d4f-9d51-238bd85875b3
         userCondition: null
 handle: Nieuwspagina
 hasTitleField: true
-name: NIeuwspagina
-section: 806c152e-3094-4e0c-b72f-69950132c3ff # NIeuwspagina
+name: Nieuwspagina
+section: 806c152e-3094-4e0c-b72f-69950132c3ff # Nieuwspagina
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

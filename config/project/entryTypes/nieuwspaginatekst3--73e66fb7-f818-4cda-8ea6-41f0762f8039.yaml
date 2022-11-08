@@ -1,5 +1,5 @@
 fieldLayouts:
-  20cc3e40-8661-4f3e-a7ea-f70e5edbb397:
+  de6a5a97-c4ce-41a8-b8d5-a82880b457a9:
     tabs:
       -
         elementCondition: null
@@ -26,30 +26,30 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 83ef56b7-287e-479f-a5e1-7dba540dbba3
+            uid: bde8b16b-a104-490d-88c4-bde0d1af4753
             userCondition: null
             warning: null
             width: 100
           -
             elementCondition: null
-            fieldUid: b9744da2-0f38-4a28-8e06-55ca5eb8a847 # Nieuwspaginatekst 1
+            fieldUid: 7282b0d6-cd9c-452e-9486-93188a764195 # Nieuwspaginatekst 3
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 1b9921f7-26cb-4f72-8ab9-d87cace044e7
+            uid: 0afa32eb-b5d7-45cb-8609-5df3c694f497
             userCondition: null
             warning: null
             width: 100
-        name: 'tekst 1'
-        uid: 0e18c456-e29c-45b9-a0d2-20f2b0d6746d
+        name: Content
+        uid: 4b76f413-eccd-45b7-aac8-2fb9676a244e
         userCondition: null
-handle: Nieuwspagina
+handle: nieuwspaginatekst3
 hasTitleField: true
-name: Nieuwspagina
+name: 'Nieuwspaginatekst 3'
 section: 806c152e-3094-4e0c-b72f-69950132c3ff # Nieuwspagina
-sortOrder: 1
+sortOrder: 4
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-    {% include 'head.twig' with { 
-        naam: 'Contactpagina'     
-    }%} 
+{% include 'head.twig' with {
+naam: 'Contactpagina'
+}%}
 
-    <body class="ltr">
-        <header>
-            <div class="topnav" id="myTopnav">
-                {% for navItem in navigation.linkGroup.all() %}
-                <ul class="active">
-                    {{ navItem.customLink.getLink({ class: 'nav-link' }) }}
+<body class="ltr">
+    <header>
+        <div class="topnav" id="myTopnav">
+            {% for navItem in navigation.linkGroup.all() %}
+            <ul class="active">
+                {{ navItem.customLink.getLink({ class: 'nav-link' }) }}
+            </ul>
+            {% endfor %}
+        </div>
+    </header>
+    <div id="grid-container"> 
+    <div id="styling">
+        <div id="main">
+            <div class="content">
+                <h1>
+                    {{ entry.title }}
+                </h1>
+                <ul>
+                    {% set contactpagina = craft.entries()
+                    .section('contactpagina')
+                    .limit(10)
+                    .all() %}
+                    {% for tekst in contactpagina %}
+
+                    <p>
+                        {{ tekst.contactpaginatekst }}
+                    </p>
+                    <p>
+                        {% endfor %}
                 </ul>
-                {% endfor %}
             </div>
-        </header>
-        <div id="container">
-            <div id="modal">
-                <div id="main">
-                    <div class="content">
-                        <h1>
-                            {{ entry.title }}
-                        </h1>
-                        <ul>
-                            {% set contactpagina = craft.entries()
-                            .section('contactpagina')
-                            .limit(10)
-                            .all() %}
-                            {% for tekst in contactpagina %}
+        </div>
+    </div>
+    </div>
+</body>
+</body>
 
-                            <p>
-                                {{ tekst.contactpaginatekst }}
-                            </p>
-                            <p>
-
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </body>
-    </body>
 </html>

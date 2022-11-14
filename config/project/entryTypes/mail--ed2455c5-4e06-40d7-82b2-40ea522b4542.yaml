@@ -1,5 +1,5 @@
 fieldLayouts:
-  a8f983a7-5256-40b3-9aef-be36451b70de:
+  a684a14f-6da0-4a8b-b9cb-2325ea77ea97:
     tabs:
       -
         elementCondition: null
@@ -26,41 +26,65 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: d5922ab6-dc58-43ba-b053-1e0e5b5e60fc
+            uid: 65c852fd-74af-4958-a53d-c02ed708803b
             userCondition: null
             warning: null
             width: 100
           -
             elementCondition: null
-            fieldUid: 2b4e143e-7528-4969-ab52-6165ae2914e6 # Submenutekst
+            fieldUid: d0785006-9b42-46b4-8e81-af57bccab538 # FIrstname
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: cda313dc-1800-4f4e-8b68-77882c4aba4d
+            uid: 856b3c88-8580-4c25-b5bb-5f910f415282
             userCondition: null
             warning: null
             width: 100
           -
             elementCondition: null
-            fieldUid: db77008e-4484-4608-ae80-6a5cf75ce19f
+            fieldUid: ad26055d-eb36-44cf-bf1d-e474a1045765 # Lastname
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 94768d4d-addb-49fd-8aef-461cbe2e5a5e
+            uid: b0096373-66a5-4ba3-90c1-dc015c84c948
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d53df07f-cbb6-43c7-80fc-dd34ace01b59 # EmailAddress
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8a815afc-518c-4d82-bd87-85cbd6474651
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 5e058bb3-9374-416c-bdab-94f86d5cd4de
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 68b883de-e8ef-4268-96c6-544d4475ff48
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 88810d45-82e6-4640-88f2-5c4006cd52b3
+        uid: 71acab54-6267-47d2-b0b8-8baadf77e447
         userCondition: null
-handle: SubmenuContact
+handle: mail
 hasTitleField: true
-name: SubmenuContact
-section: 73b121f5-9d69-440c-bd92-0afabb084fde # Submenucontact
+name: Mailer
+section: 3d146a0c-ac9e-4877-943d-f9134f3546d2 # Mailer
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

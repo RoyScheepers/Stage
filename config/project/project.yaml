@@ -1,7 +1,11 @@
-dateModified: 1668418179
+dateModified: 1668437684
 email:
   fromEmail: Roy12overbeek@hotmail.com
   fromName: Stage
+  replyToEmail: null
+  template: null
+  transportSettings:
+    command: '/usr/sbin/sendmail -bs'
   transportType: craft\mail\transportadapters\Sendmail
 fs:
   assets:
@@ -15,6 +19,7 @@ meta:
   __names__:
     2b4e143e-7528-4969-ab52-6165ae2914e6: Submenutekst # Submenutekst
     3cb2174e-8b70-4419-9324-8292533a014c: Link # Link
+    3d146a0c-ac9e-4877-943d-f9134f3546d2: Mailer # Mailer
     7ab04376-05db-45f0-99a3-539c362ef563: Stage # Stage
     9aaba2fb-2158-4ef3-b23f-48b48f7c89d3: 'Preview Image ' # Preview Image 
     18f61b71-9a64-4293-9a38-968dd55c5e91: ContactPaginaTekst # ContactPaginaTekst
@@ -30,11 +35,16 @@ meta:
     90734f86-d637-45c2-8dff-7265a51843ca: Common # Common
     4653194c-0478-4c38-8488-2887e8272276: 'Home page' # Home page
     a070c64f-5c6e-4964-9ee8-cf31a84611eb: Image # Image
+    ad26055d-eb36-44cf-bf1d-e474a1045765: Lastname # Lastname
     b5f9038a-af7a-4077-b032-b9ae4a5977d0: Stage # Stage
     b9eab774-ce40-4462-a7d9-23a0be96650f: public # public
     b9744da2-0f38-4a28-8e06-55ca5eb8a847: Nieuwspaginatekst # Nieuwspaginatekst
+    d0785006-9b42-46b4-8e81-af57bccab538: FIrstname # FIrstname
+    d53df07f-cbb6-43c7-80fc-dd34ace01b59: EmailAddress # EmailAddress
+    df929250-2dea-4e33-8557-1898395910e1: Mailer # Mailer
     e1236076-4f78-4de7-adc2-d1f1dbcfdba7: navigation # navigation
     ecc43404-6e23-417e-816e-98745ef5f49a: 'Text ' # Text 
+    ed2455c5-4e06-40d7-82b2-40ea522b4542: Mailer # Mailer
 plugins:
   redactor:
     edition: standard

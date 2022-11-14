@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-    {   {% include 'head.twig' with { 
-        naam: 'SubmenuContact'     
-    }%} 
-    
+{% include 'head.twig' with {
+naam: 'SubmenuContact'
+}%}
+
 <body class="ltr">
     <header id="myTopnav">
         <div class="topnav" id="myTopnav">
@@ -14,11 +14,9 @@
             </ul>
             {% endfor %}
         </div>
-
     </header>
-
-    <div id="container">
-        <div id="modal">
+    <div id="grid-container">
+        <div id="styling">
             <div id="main">
                 <div class="content">
                     <h1>
@@ -26,6 +24,32 @@
                     </h1>
                     <p> {{ entry.submenutekst}}</p>
                 </div>
+            </div>
+        </div>
+        <div id="styling">
+            <div class="content">
+                {% set mailer = craft.entries()
+                .section('mailer')
+                .limit(10)
+                .orderBy('')
+                .all() %}
+
+                {% for tekst in mailer %}
+
+                <h1> {{ tekst.title }}</h1>
+
+                <label>{{ tekst.firstname }} </label>
+                <input> </input>
+
+                <label>{{ tekst.lastname }} </label>
+                <input> </input>
+
+                <label>{{ tekst.emailaddress }} </label>
+                <input> </input>
+
+                <button>Email</button>
+
+                {% endfor %}
             </div>
         </div>
     </div>

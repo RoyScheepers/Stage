@@ -1,4 +1,4 @@
-dateModified: 1668437684
+dateModified: 1668439352
 email:
   fromEmail: Roy12overbeek@hotmail.com
   fromName: Stage
@@ -20,11 +20,13 @@ meta:
     2b4e143e-7528-4969-ab52-6165ae2914e6: Submenutekst # Submenutekst
     3cb2174e-8b70-4419-9324-8292533a014c: Link # Link
     3d146a0c-ac9e-4877-943d-f9134f3546d2: Mailer # Mailer
+    5c79a5b9-c5f6-47a9-bc5b-db9ef8038308: 'Contact Form' # Contact Form
     7ab04376-05db-45f0-99a3-539c362ef563: Stage # Stage
     9aaba2fb-2158-4ef3-b23f-48b48f7c89d3: 'Preview Image ' # Preview Image 
     18f61b71-9a64-4293-9a38-968dd55c5e91: ContactPaginaTekst # ContactPaginaTekst
     68fc4b1b-ee3a-4402-a858-73ee024b6726: 'Link Group ' # Link Group 
     73b121f5-9d69-440c-bd92-0afabb084fde: Submenucontact # Submenucontact
+    98d115a6-cdb7-4331-b2a6-0f15852eea1c: New # New
     155bba92-5c79-4460-aed1-3cd69e769831: 'Home page' # Home page
     190f069b-edfb-45b9-9fc6-bedf27af04b5: Contactpagina # Contactpagina
     624e1077-2ee5-493b-8a3f-626fadbddfd9: 'Link Item' # Link Item
@@ -46,6 +48,11 @@ meta:
     ecc43404-6e23-417e-816e-98745ef5f49a: 'Text ' # Text 
     ed2455c5-4e06-40d7-82b2-40ea522b4542: Mailer # Mailer
 plugins:
+  formie:
+    edition: standard
+    enabled: true
+    licenseKey: 91LV8PAD4G4LZJZASKYY501Q
+    schemaVersion: 2.0.8
   redactor:
     edition: standard
     enabled: true

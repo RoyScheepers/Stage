@@ -27,32 +27,15 @@ naam: 'SubmenuContact'
             </div>
         </div>
         <div id="styling">
-            <div class="content">
-                {% set mailer = craft.entries()
-                .section('mailer')
-                .limit(10)
-                .orderBy('')
-                .all() %}
+            <div class="content">   
+                {% set form = craft.formie.forms.handle('emailer').one() %}             
 
-                {% for tekst in mailer %}
+               {{ craft.formie.renderForm('emailer') }}
 
-                <h1> {{ tekst.title }}</h1>
-
-                <label>{{ tekst.firstname }} </label>
-                <input> </input>
-
-                <label>{{ tekst.lastname }} </label>
-                <input> </input>
-
-                <label>{{ tekst.emailaddress }} </label>
-                <input> </input>
-
-                <button>Email</button>
-
-                {% endfor %}
             </div>
         </div>
     </div>
 </body>
 
 </html>
+

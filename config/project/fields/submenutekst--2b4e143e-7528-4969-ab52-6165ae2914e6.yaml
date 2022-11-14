@@ -1,12 +1,12 @@
-columnSuffix: azkouyhe
+columnSuffix: ahawteat
 contentColumnType: text
 fieldGroup: 90734f86-d637-45c2-8dff-7265a51843ca # Common
-handle: nieuwspaginatekst3
+handle: submenutekst
 instructions: null
-name: 'Nieuwspaginatekst 3'
+name: Submenutekst
 searchable: false
 settings:
-  availableTransforms: '*'
+  availableTransforms: ''
   availableVolumes: '*'
   columnType: text
   configSelectionMode: choose
@@ -18,9 +18,9 @@ settings:
   removeEmptyTags: false
   removeInlineStyles: false
   removeNbsp: false
-  showHtmlButtonForNonAdmins: true
+  showHtmlButtonForNonAdmins: false
   showUnpermittedFiles: false
-  showUnpermittedVolumes: true
+  showUnpermittedVolumes: false
   uiMode: enlarged
 translationKeyFormat: null
 translationMethod: none

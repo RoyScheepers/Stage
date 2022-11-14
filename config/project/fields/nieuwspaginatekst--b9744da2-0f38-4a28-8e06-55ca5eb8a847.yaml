@@ -1,9 +1,9 @@
 columnSuffix: hycpqonq
 contentColumnType: text
 fieldGroup: 90734f86-d637-45c2-8dff-7265a51843ca # Common
-handle: nieuwspaginatekst1
+handle: nieuwspaginatekst
 instructions: null
-name: 'Nieuwspaginatekst 1'
+name: Nieuwspaginatekst
 searchable: false
 settings:
   availableTransforms: ''

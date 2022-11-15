@@ -1,11 +1,11 @@
-dateModified: 1668523125
+dateModified: 1668527333
 email:
-  fromEmail: Roy12overbeek@hotmail.com
+  fromEmail: roy@perfectwebteam.nl
   fromName: Stage
   replyToEmail: null
   template: null
   transportSettings:
-    command: '/usr/sbin/sendmail -bs'
+    command: $IPADDRESS
   transportType: craft\mail\transportadapters\Sendmail
 fs:
   assets:
@@ -82,28 +82,28 @@ plugins:
                   - settings
                   -
                     __assoc__:
-                      0:
+                      -
                         - handle
                         - recaptcha
-                      3:
+                      -
                         - type
                         - v3
-                      4:
+                      -
                         - size
                         - normal
-                      5:
+                      -
                         - theme
                         - light
-                      6:
+                      -
                         - badge
                         - bottomright
-                      7:
+                      -
                         - language
                         - en
-                      8:
+                      -
                         - minScore
                         - 0.5
-                      10:
+                      -
                         - scriptLoadingMethod
                         - asyncDefer
           -
@@ -123,22 +123,22 @@ plugins:
                   - settings
                   -
                     __assoc__:
-                      0:
+                      -
                         - handle
                         - hcaptcha
-                      3:
+                      -
                         - size
                         - normal
-                      4:
+                      -
                         - theme
                         - light
-                      5:
+                      -
                         - language
                         - en
-                      6:
+                      -
                         - minScore
                         - 0.5
-                      7:
+                      -
                         - scriptLoadingMethod
                         - asyncDefer
           -
@@ -244,6 +244,7 @@ system:
   edition: solo
   live: true
   name: Stage
+  retryDuration: null
   schemaVersion: 4.0.0.9
   timeZone: America/Los_Angeles
 users:

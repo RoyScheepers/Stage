@@ -1,51 +1,42 @@
-<!DOCTYPE html>
-<html lang="en-US">
+{% extends "html.twig" %}
 
-{% include 'head.twig' with {
-naam: 'Nieuwspagina'
-}%}
+{% set docTitle = 'Homepage' %}
+
+{% set bodyAttributes = {
+class: 'ltr'
+} %}
+
+{% block head %}
+{{ parent() }}
+{% endblock %}
+
+{% block header %}
+{{ parent() }}
+{% endblock %}
 
 
+{% block body %}
 
-<body class="ltr">
-    <header>
-        <div class="topnav" id="myTopnav">
-            {% for navItem in navigation.linkGroup.all() %}
-            <ul class="active">
-                {{ navItem.customLink.getLink({ class: 'nav-link' }) }}
-            </ul>
-            {% endfor %}
+
+<div class="grid-container ">
+    {% set nieuwspagina = craft.entries()
+    .section('nieuwspagina')
+    .limit(10)
+    .orderBy('')
+    .all() %}
+
+    {% for tekst in nieuwspagina %}
+
+    <div class="card">
+        <figure class="card__figure"> </figure>
+        <div class="card__body">
+            <h2>
+                {{ tekst.title }}
+            </h2>
+            {{ tekst.nieuwspaginatekst }}
         </div>
-    </header>
-    <div id="grid-container">
-        {% set nieuwspagina = craft.entries()
-        .section('nieuwspagina')
-        .limit(10)
-        .orderBy('')
-        .all() %}
-
-        {% for tekst in nieuwspagina %}
-
-        <div id="styling">
-            <div id="main">
-                <div class="content">
-                    <h1>
-                        {{ tekst.title }}
-                    </h1>
-                    <ul>
-                        <p>
-                            {{ tekst.nieuwspaginatekst }}
-                        </p>
-                        <p>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-
-        {% endfor %}
     </div>
-</body>
 
-
-</html>
+    {% endfor %}
+</div>
+{% endblock %}

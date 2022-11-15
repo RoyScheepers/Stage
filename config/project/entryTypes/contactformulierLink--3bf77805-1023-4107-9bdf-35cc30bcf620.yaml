@@ -1,5 +1,5 @@
 fieldLayouts:
-  f86d6ec7-9c5c-4e4b-b822-67d3c70abf3f:
+  f2ff4a07-8f72-4d6f-b3c7-d442ec8b6587:
     tabs:
       -
         elementCondition: null
@@ -26,19 +26,7 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 8aa21f55-c213-400d-b7f7-dbc27d68d32f
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: 18f61b71-9a64-4293-9a38-968dd55c5e91 # ContactPaginaTekst
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: ff40149d-8a8a-4c62-a977-a281e9ee9561
+            uid: 30ee4b62-8cee-470e-a60a-0b1e670ea23a
             userCondition: null
             warning: null
             width: 100
@@ -50,18 +38,18 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 5e8ef946-37fd-4f9e-b40f-f97bc2a768e1
+            uid: 12ff3314-827a-4a5f-b45d-82bb032a17f2
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 8803d388-cb75-436b-8945-939e80d0adc1
+        uid: 8d4902c5-1147-42aa-8930-b0f5cd0d9b98
         userCondition: null
-handle: contactformulier
+handle: contactformulierLink
 hasTitleField: true
-name: Contactformulier
+name: 'Contactformulier Link'
 section: 190f069b-edfb-45b9-9fc6-bedf27af04b5 # Contactpagina
-sortOrder: 1
+sortOrder: 2
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

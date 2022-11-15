@@ -1,0 +1,24 @@
+fieldLayouts:
+  a930c83f-cfa7-4dab-94f9-a1b85143da71:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: ecad64de-f06b-4d1c-8c67-951bc9432165 # ContactformulierLinkGroup
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 82a8d692-5a81-4c28-b78a-481b65c329ae
+            userCondition: null
+            warning: null
+            width: 100
+        name: menuLinks
+        uid: 91c231f2-e5f6-43e9-93ce-770b3bc8f7d1
+        userCondition: null
+handle: menunavigation
+name: menuNavigation
+sortOrder: 2

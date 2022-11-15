@@ -18,14 +18,12 @@ class: 'ltr'
 {% block body %}
 
 
-
-
 <div class="grid-container">
-    {% set contactpagina = craft.entries()
-    .section('contactpagina')
+    {% set algemenevoorwaarden = craft.entries()
+    .section('algemenevoorwaarden')
     .limit(10)
     .all() %}
-    {% for tekst in contactpagina %}
+    {% for tekst in algemenevoorwaarden %}
 
     <div class="card">
         <figure class="card__figure"> </figure>
@@ -36,21 +34,13 @@ class: 'ltr'
                 </h2>
             </div>
             <div class="card__text">
-                {{ tekst.contactpaginatekst }}
+                {{ tekst.Voorwaarden }}
             </div>
-        </div>
-
-        <div>
-            {% for navItem in menunavigation.contactformulierlinkgroup.all() %}
-
-            <button class="button">{{ navItem.contact.getLink({ class: 'nav-link' }) }}</button>
-                
-          
-            {% endfor %}
         </div>
     </div>
     {% endfor %}
 
-
 </div>
+
+
 {% endblock %}

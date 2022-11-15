@@ -1,33 +1,32 @@
-<!DOCTYPE html>
-<html lang="en-US">
+{% extends "html.twig" %}
 
-    {% include 'head.twig' with { 
-        naam: 'Homepage'     
-    }%} 
+{% set docTitle = 'Homepage' %}
 
-<body class="ltr">
-    <header>
-        <div class="topnav" id="myTopnav">
-            {% for navItem in navigation.linkGroup.all() %}
-            <ul class="active">
-                {{ navItem.customLink.getLink({ class: 'nav-link' }) }}
-            </ul>
-            {% endfor %}
-        </div>
-    </header>
-    <div class="center">
-        <div id="image">
-            <div id="main">
-                <div class="content">
-                    {% set previewImage = entry.previewImage.one() %}
+{% set bodyAttributes = {
+class: 'ltr'
+} %}
 
-                    <img src="{{ previewImage.getUrl('') }}" alt="{{ previewImage.title }}">
+{% block head %}
+{{ parent() }}
+{% endblock %}
 
-                </div>
-            </div>
+{% block header %}
+{{ parent() }}
+{% endblock %}
 
-        </div>
+
+{% block body %}
+<div class="center">
+  <div id="image">
+    <div id="main">
+      <div class="content">
+        {% set previewImage = entry.previewImage.one() %}
+
+        <img src="{{ previewImage.getUrl('') }}" alt="{{ previewImage.title }}">
+
+      </div>
     </div>
-</body>
 
-</html>
+  </div>
+</div>
+{% endblock %}

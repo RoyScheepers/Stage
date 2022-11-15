@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ currentSite.language }}">
+
+<head>
+    {% block head %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <title>{{ docTitle ?? siteName }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,
+      maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="referrer" content="origin-when-cross-origin" />
+
+    {% css alias('@web') ~ '/web/assets/' ~ 'styles.css' with {type: 'text/css'} %}
+
+    {% endblock %}
+</head>
+
+
+<body {{ attr(bodyAttributes ?? {}) }}>
+    {% block header %}
+    <header>
+        <div class="topnav" id="myTopnav">
+            {% for navItem in navigation.linkGroup.all() %}
+            <ul class="active">
+                {{ navItem.customLink.getLink({ class: 'nav-link' }) }}
+            </ul>
+            {% endfor %}
+        </div>
+    </header>
+    {% endblock %}
+
+
+    {% block body %}
+    {% endblock %}
+
+    {% block footer %}
+    <footer>
+        <div class="bottomnav">
+            {% for navItem in footernavigation.footerLinkGroup.all() %}
+            <ul class="active">
+                {{ navItem.footerlink.getLink({ class: 'nav-link' }) }}
+            </ul>
+            {% endfor %}
+        </div>
+    </footer>
+    {% endblock %}
+
+</body>
+
+</html>

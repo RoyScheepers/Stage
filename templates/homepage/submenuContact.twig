@@ -1,41 +1,27 @@
-<!DOCTYPE html>
-<html lang="en-US">
+{% extends "html.twig" %}
 
-{% include 'head.twig' with {
-naam: 'SubmenuContact'
-}%}
+{% set docTitle = 'Homepage' %}
 
-<body class="ltr">
-    <header id="myTopnav">
-        <div class="topnav" id="myTopnav">
-            {% for navItem in navigation.linkGroup.all() %}
-            <ul class="active">
-                {{ navItem.customLink.getLink({ class: 'nav-link' }) }}
-            </ul>
-            {% endfor %}
-        </div>
-    </header>
-    <div id="grid-container">
-        <div id="styling">
-            <div id="main">
-                <div class="content">
-                    <h1>
-                        {{ entry.title }}
-                    </h1>
-                    <p> {{ entry.submenutekst}}</p>
-                </div>
-            </div>
-        </div>
-        <div id="styling">
-            <div class="content">   
-                {% set form = craft.formie.forms.handle('emailer').one() %}             
+{% set bodyAttributes = {
+class: 'ltr'
+} %}
 
-               {{ craft.formie.renderForm('emailer') }}
+{% block head %}
+{{ parent() }}
+{% endblock %}
 
-            </div>
-        </div>
+{% block header %}
+{{ parent() }}
+{% endblock %}
+
+
+{% block body %}
+<div class="grid-container ">
+    <div class="Mailer">
+        {% set form = craft.formie.forms.handle('emailer').one() %}
+        {{ craft.formie.renderForm('emailer') }}
     </div>
-</body>
+</div>
 
-</html>
 
+{% endblock %}

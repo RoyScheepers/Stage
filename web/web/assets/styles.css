@@ -1,13 +1,11 @@
-
 html,
 body {
-    font-size: 16px;
     -webkit-text-size-adjust: 100%;
     height: 100%;
     font-family: system-ui, BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
-body {            
+body {
     margin: 0;
     padding: 0;
     background-color: hsl(212, 60%, 97%);
@@ -20,8 +18,8 @@ h1 {
 }
 
 h2 {
-    margin-top: 24px;
-    font-size: 1em;
+    margin-top: 1.5em;
+    font-size: 1rem;
 }
 
 h2:first-child {
@@ -30,26 +28,29 @@ h2:first-child {
 
 p {
     line-height: 1.4em;
-    margin-bottom: 1.4em;
+    margin-top: 1.4em;
 }
 
 ul {
     line-height: 1.3em;
     padding-left: 20px;
-    margin-bottom: 0;
+    margin-top: 0;
 }
 
 ul li {
-    margin-bottom: 0.35em;
+    margin-top: 0.35em;
 }
 
 a {
-    color: #0B69A3;
+    color: #f8fafc;
     text-decoration: none;
+}
+a:link{ 
+    color: #f2f2f2;
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .go {
@@ -78,120 +79,152 @@ code {
 }
 
 
-#grid-container{ 
-    flex-grow: 1;
-   
-}
-#image{ 
-    flex-grow: 1;
-}
-
-
-#styling{
-    background: #fff;
-}
-
-#aside {
-    background: hsl(212, 60%, 97%);
-}
-
 .content {
-    
+    background: white;
     padding: 35px;
     padding-left: calc(35px + env(safe-area-inset-left));
     padding-right: calc(35px + env(safe-area-inset-right));
 }
 
- @media (min-width:768px) {   
-
-    #aside {
-        width: 50%;
-        overflow: auto;
-    } 
+.grid-container {
+    display: grid;
+    margin: 4rem;
+    height: auto;
+    width: auto;
+    justify-content: center;
+    grid-template-columns: repeat(3, 4fr);
+    flex-grow: 1;
 }
 
+.grid__item {
+    background: white;
+    padding: 1.5em;
+}
+
+
+.styling {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+    padding: 50px;
+    border-radius: 4px;
+    overflow: auto;
+    box-shadow: 0 25px 100px rgba(0, 0, 0, 0.5);
+}
+
+img {
+    max-width: 100%;
+}
+.button {
+    background-color: #443cd6; 
+    border-radius: 8px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    width: 10rem;
     
-@media (min-width:768px) and (min-height: 376px) {
-    body {
-        background-color: hsl(212, 50%, 93%);
-        background-image: url("{{ view.getAssetManager().getPublishedUrl('@app/web/assets/installer/dist', true, 'images/installer-bg.png') }}");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-    }
+    display: inline-block;
+    font-size: 16px;
 
-    #grid-container {
-        display: grid;       
-        margin: 50px;  
-        height: flex;
-        width: flex;     
-        justify-content: center;
-        grid-template-columns: auto auto auto;
-      }
-    #styling{
-        display: flex;                
-        height: 400px;
-        width: 400px;
-        margin: 50px;
-        padding: 50px;
-        align-items: center;
-        justify-content: center; 
-        max-width: 800px;
-        max-height: 525px;
-        border-radius: 4px;
-        overflow: auto;
-        box-shadow: 0 25px 100px rgba(0, 0, 0, 0.5);
-        justify-content: center;
-        }
-    #image{ 
-        display: flex;                
-        height: 600px;
-        width: 600px;
-        margin: 25px;
-        padding: 50px;
-        
-    }    
+  }
 
-    #aside {
-        overflow: auto;
-    }
+.image {
+    flex-grow: 1;
+    display: flex;
+    margin: 25px;
+    padding: 50px;
 }
 
-/* navigation bar */
+.card {
+    display: flex;
+    flex-direction: column;  
+    padding: 50px;
+    align-items: center;
+    margin: 1.5rem;    
+    box-shadow: 0 25px 100px rgba(0, 0, 0, 0.5);
+    background: #fff;
+    border-radius: 4px;
+
+}
+
+.card__body {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.Mailer {
+    display: flex;
+    max-width: 20rem;    
+    padding: 50px;
+    margin: 1.5rem;  
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    overflow: auto;
+    box-shadow: 0 25px 100px rgba(0, 0, 0, 0.5);
+    background: #fff;
+}
+
+/* navigation topbar */
 
 /* Add a black background color to the top navigation */
 .topnav {
-background-color: grey;
-overflow: hidden;
-width: 100%;
-display: flex;
-color: light-grey;
+    background-color: grey;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    display: flex;
+   
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
-float: left;
-display: block;
-color: #f2f2f2;
-text-align: left;
-padding: 14px 16px;
-text-decoration: none;
-font-size: 17px;
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
 }
 
 /* Change the color of links on hover */
 .topnav a:hover {
-background-color: #ddd;
-color: black;
+    background-color: #ddd;
+    color: black;
 }
 
-/* Add an active class to highlight the current page */
-.topnav a.active {
-background-color: #04AA6D;
-color: white;
+/* navigation bottombar */
+
+/* Add a black background color to the top navigation */
+.bottomnav {
+    background-color: grey;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    justify-content: center;
+ 
 }
 
-/* Hide the link that should open and close the topnav on small screens */
-.topnav .icon {
-display: none;
+/* Style the links inside the navigation bar */
+.bottomnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
 }
+
+/* Change the color of links on hover */
+.bottomnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+

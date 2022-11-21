@@ -1,11 +1,11 @@
-dateModified: 1668527333
+dateModified: 1669042667
 email:
   fromEmail: roy@perfectwebteam.nl
   fromName: Stage
   replyToEmail: null
   template: null
   transportSettings:
-    command: $IPADDRESS
+    command: $SENDMAIL
   transportType: craft\mail\transportadapters\Sendmail
 fs:
   assets:

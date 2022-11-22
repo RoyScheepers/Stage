@@ -4,8 +4,66 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "24929a8ee32e0a899182ebb6092c4e60",
+    "content-hash": "ae92fe74d6a22869dd25851ebbd49af3",
     "packages": [
+        {
+            "name": "acclaro/translations",
+            "version": "v3.1.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AcclaroInc/craft-translations/zipball/6b9f2d792d5d96307e6f9da06846b9f612250f01",
+                "reference": "6b9f2d792d5d96307e6f9da06846b9f612250f01",
+                "shasum": ""
+            },
+            "require": {
+                "composer/composer": "^2.1.9",
+                "craftcms/cms": "^4.0.0",
+                "guzzlehttp/guzzle": "^7.0",
+                "spatie/guzzle-rate-limiter-middleware": "^2.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Translations",
+                "handle": "translations",
+                "hasCpSection": true,
+                "changelogUrl": "https://github.com/AcclaroInc/craft-translations/master/CHANGELOG.md",
+                "documentationUrl": "https://github.com/AcclaroInc/craft-translations/wiki",
+                "components": {
+                    "translationPluginForCraftService": "acclaro\\translations\\services\\TranslationsService"
+                },
+                "class": "acclaro\\translations\\Translations"
+            },
+            "autoload": {
+                "psr-4": {
+                    "acclaro\\translations\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Acclaro",
+                    "homepage": "http://www.acclaro.com/"
+                }
+            ],
+            "description": "Easily launch and manage multilingual Craft websites without having to copy/paste content or manually track updates.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "multisite",
+                "multisite translations",
+                "translation plugin for craft",
+                "translations"
+            ],
+            "support": {
+                "docs": "https://github.com/AcclaroInc/craft-translations/wiki",
+                "issues": "https://github.com/AcclaroInc/craft-translations/issues"
+            },
+            "time": "2022-11-14T09:29:22+00:00"
+        },
         {
             "name": "cebe/markdown",
             "version": "1.2.1",
@@ -440,11 +498,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "4.3.1",
+            "version": "4.3.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/1149dd385d9d38fbd1e0a6edf057ce8fe5347487",
-                "reference": "1149dd385d9d38fbd1e0a6edf057ce8fe5347487",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/d3f925be7a48da1ad7f6d54409cb4066038bd405",
+                "reference": "d3f925be7a48da1ad7f6d54409cb4066038bd405",
                 "shasum": ""
             },
             "require": {
@@ -535,7 +593,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2022-10-27T19:59:08+00:00"
+            "time": "2022-11-17T17:49:32+00:00"
         },
         {
             "name": "craftcms/html-field",
@@ -1705,7 +1763,7 @@
         },
         {
             "name": "illuminate/collections",
-            "version": "v9.39.0",
+            "version": "v9.40.1",
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/illuminate/collections/zipball/1729899f8e37840738d1c37bb110da5b09509990",
@@ -1750,7 +1808,7 @@
         },
         {
             "name": "illuminate/conditionable",
-            "version": "v9.39.0",
+            "version": "v9.40.1",
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/illuminate/conditionable/zipball/5b40f51ccb07e0e7b1ec5559d8db9e0e2dc51883",
@@ -1786,7 +1844,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v9.39.0",
+            "version": "v9.40.1",
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/illuminate/contracts/zipball/c7cc6e6198cac6dfdead111f9758de25413188b7",
@@ -1824,7 +1882,7 @@
         },
         {
             "name": "illuminate/macroable",
-            "version": "v9.39.0",
+            "version": "v9.40.1",
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/illuminate/macroable/zipball/e3bfaf6401742a9c6abca61b9b10e998e5b6449a",
@@ -1857,6 +1915,58 @@
             "description": "The Illuminate Macroable package.",
             "homepage": "https://laravel.com",
             "time": "2022-08-09T13:29:29+00:00"
+        },
+        {
+            "name": "jaybizzle/crawler-detect",
+            "version": "v1.2.112",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JayBizzle/Crawler-Detect.git",
+                "reference": "2c555ce35a07a5c1c808cee7d5bb52c41a4c7b2f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JayBizzle/Crawler-Detect/zipball/2c555ce35a07a5c1c808cee7d5bb52c41a4c7b2f",
+                "reference": "2c555ce35a07a5c1c808cee7d5bb52c41a4c7b2f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8|^5.5|^6.5|^9.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jaybizzle\\CrawlerDetect\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Beech",
+                    "email": "m@rkbee.ch",
+                    "role": "Developer"
+                }
+            ],
+            "description": "CrawlerDetect is a PHP class for detecting bots/crawlers/spiders via the user agent",
+            "homepage": "https://github.com/JayBizzle/Crawler-Detect/",
+            "keywords": [
+                "crawler",
+                "crawler detect",
+                "crawler detector",
+                "crawlerdetect",
+                "php crawler detect"
+            ],
+            "support": {
+                "issues": "https://github.com/JayBizzle/Crawler-Detect/issues",
+                "source": "https://github.com/JayBizzle/Crawler-Detect/tree/v1.2.112"
+            },
+            "time": "2022-10-05T21:52:44+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -2666,6 +2776,67 @@
             "time": "2022-07-30T15:51:26+00:00"
         },
         {
+            "name": "pierrestoffe/craft-language-redirector",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pierrestoffe/craft-language-redirector.git",
+                "reference": "a2bd8afde4cf203be83a06cd34cfd24c05d95d3c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pierrestoffe/craft-language-redirector/zipball/a2bd8afde4cf203be83a06cd34cfd24c05d95d3c",
+                "reference": "a2bd8afde4cf203be83a06cd34cfd24c05d95d3c",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0|^4.0.0",
+                "jaybizzle/crawler-detect": "^1.2"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Language Redirector",
+                "handle": "language-redirector",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/pierrestoffe/craft-language-redirector/master/CHANGELOG.md",
+                "components": {
+                    "languageRedirectorService": "pierrestoffe\\languageredirector\\services\\LanguageRedirectorService"
+                },
+                "class": "pierrestoffe\\languageredirector\\LanguageRedirector"
+            },
+            "autoload": {
+                "psr-4": {
+                    "pierrestoffe\\languageredirector\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pierre Stoffe",
+                    "homepage": "https://pierrestoffe.be"
+                }
+            ],
+            "description": "Automatically redirect visitors to their preferred language",
+            "keywords": [
+                "Craft",
+                "cms",
+                "craft-plugin",
+                "craftcms",
+                "language redirector"
+            ],
+            "support": {
+                "docs": "https://github.com/pierrestoffe/craft-language-redirector/blob/master/README.md",
+                "issues": "https://github.com/pierrestoffe/craft-language-redirector/issues",
+                "source": "https://github.com/pierrestoffe/craft-language-redirector/tree/2.0.1"
+            },
+            "time": "2022-06-10T18:18:32+00:00"
+        },
+        {
             "name": "pixelandtonic/imagine",
             "version": "1.2.4.2",
             "dist": {
@@ -3392,6 +3563,44 @@
                 "phar"
             ],
             "time": "2022-08-31T10:31:18+00:00"
+        },
+        {
+            "name": "spatie/guzzle-rate-limiter-middleware",
+            "version": "2.0.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/guzzle-rate-limiter-middleware/zipball/8679f7a22e46edc182046f18b83bacbc627b0600",
+                "reference": "8679f7a22e46edc182046f18b83bacbc627b0600",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.3|^7.0",
+                "php": "^7.1|^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\GuzzleRateLimiterMiddleware\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastiandedeyne@gmail.com",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A rate limiter for Guzzle",
+            "homepage": "https://github.com/spatie/guzzle-rate-limiter-middleware",
+            "keywords": [
+                "guzzle-rate-limiter-middleware",
+                "spatie"
+            ],
+            "time": "2020-12-19T18:47:06+00:00"
         },
         {
             "name": "stripe/stripe-php",
@@ -4619,16 +4828,15 @@
         },
         {
             "name": "symfony/process",
-            "version": "v5.4.11",
+            "version": "v6.0.11",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/6e75fe6874cbc7e4773d049616ab450eff537bf1",
-                "reference": "6e75fe6874cbc7e4773d049616ab450eff537bf1",
+                "url": "https://api.github.com/repos/symfony/process/zipball/44270a08ccb664143dede554ff1c00aaa2247a43",
+                "reference": "44270a08ccb664143dede554ff1c00aaa2247a43",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2.5",
-                "symfony/polyfill-php80": "^1.16"
+                "php": ">=8.0.2"
             },
             "type": "library",
             "autoload": {
@@ -4654,7 +4862,7 @@
             ],
             "description": "Executes commands in sub-processes",
             "homepage": "https://symfony.com",
-            "time": "2022-06-27T16:58:25+00:00"
+            "time": "2022-06-27T17:10:44+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -5916,16 +6124,16 @@
         },
         {
             "name": "yiisoft/yii2-queue",
-            "version": "2.3.4",
+            "version": "2.3.5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-queue/zipball/ed30b5f46ddadd62587a4963dec35f9b756c408b",
-                "reference": "ed30b5f46ddadd62587a4963dec35f9b756c408b",
+                "url": "https://api.github.com/repos/yiisoft/yii2-queue/zipball/c1bf0ef5dbe107dc1cf692c1349b9ddd2485a399",
+                "reference": "c1bf0ef5dbe107dc1cf692c1349b9ddd2485a399",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.0",
-                "symfony/process": "^3.3||^4.0||^5.0",
+                "symfony/process": "^3.3||^4.0||^5.0||^6.0",
                 "yiisoft/yii2": "~2.0.14"
             },
             "suggest": {
@@ -5981,7 +6189,7 @@
                 "sqs",
                 "yii"
             ],
-            "time": "2022-03-31T07:41:51+00:00"
+            "time": "2022-11-18T17:16:47+00:00"
         },
         {
             "name": "yiisoft/yii2-symfonymailer",

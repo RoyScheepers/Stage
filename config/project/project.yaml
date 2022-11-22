@@ -1,4 +1,4 @@
-dateModified: 1669042667
+dateModified: 1669114153
 email:
   fromEmail: roy@perfectwebteam.nl
   fromName: Stage
@@ -217,7 +217,7 @@ plugins:
       includeDraftElementUsage: false
       includeRevisionElementUsage: false
       maxIncompleteSubmissionAge: 30
-      maxSentNotificationsAge: 30
+      maxSentNotificationsAge: 0
       pdfPaperOrientation: portrait
       pdfPaperSize: letter
       pluginName: Formie
@@ -232,6 +232,10 @@ plugins:
       spamLimit: 500
       useQueueForIntegrations: true
       useQueueForNotifications: true
+  language-redirector:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   redactor:
     edition: standard
     enabled: true

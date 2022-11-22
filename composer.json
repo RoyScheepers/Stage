@@ -1,7 +1,9 @@
 {
   "require": {
+    "acclaro/translations": "^3.1",
     "craftcms/cms": "^4.2.7",
     "craftcms/redactor": "3.0.2",
+    "pierrestoffe/craft-language-redirector": "^2.0",
     "sebastianlenz/linkfield": "2.1.4",
     "verbb/formie": "^2.0",
     "vlucas/phpdotenv": "^5.4.0"

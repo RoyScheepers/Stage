@@ -1,4 +1,4 @@
-dateModified: 1669114153
+dateModified: 1669114183
 email:
   fromEmail: roy@perfectwebteam.nl
   fromName: Stage
@@ -235,6 +235,7 @@ plugins:
   language-redirector:
     edition: standard
     enabled: true
+    licenseKey: GLP40DMFMCJWMPDVEOPP4LSS
     schemaVersion: 1.0.0
   redactor:
     edition: standard

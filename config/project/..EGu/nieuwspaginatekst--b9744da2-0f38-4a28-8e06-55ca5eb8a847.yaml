@@ -1,0 +1,27 @@
+columnSuffix: hycpqonq
+contentColumnType: text
+fieldGroup: 90734f86-d637-45c2-8dff-7265a51843ca # Common
+handle: nieuwspaginatekst
+instructions: null
+name: Nieuwspaginatekst
+searchable: false
+settings:
+  availableTransforms: ''
+  availableVolumes: '*'
+  columnType: text
+  configSelectionMode: choose
+  defaultTransform: ''
+  manualConfig: ''
+  purifierConfig: null
+  purifyHtml: true
+  redactorConfig: null
+  removeEmptyTags: false
+  removeInlineStyles: false
+  removeNbsp: false
+  showHtmlButtonForNonAdmins: false
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  uiMode: enlarged
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

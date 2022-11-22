@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 90734f86-d637-45c2-8dff-7265a51843ca # Common
+handle: linkGroup
+instructions: null
+name: 'Link Group '
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_linkgroup}}'
+  maxBlocks: null
+  minBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

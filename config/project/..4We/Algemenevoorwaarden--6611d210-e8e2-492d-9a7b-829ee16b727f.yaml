@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: Algemenevoorwaarden
+name: AlgemeneVoorwaarden
+propagationMethod: all
+siteSettings:
+  b5f9038a-af7a-4077-b032-b9ae4a5977d0: # Stage
+    enabledByDefault: true
+    hasUrls: true
+    template: homepage/algemeneVoorwaarden.twig
+    uriFormat: 'algemenevoorwaarden/{slug}'
+type: channel

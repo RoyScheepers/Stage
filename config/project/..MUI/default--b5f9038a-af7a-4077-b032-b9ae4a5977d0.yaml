@@ -1,0 +1,8 @@
+baseUrl: $PRIMARY_SITE_URL
+handle: default
+hasUrls: true
+language: en-US
+name: Stage
+primary: true
+siteGroup: 7ab04376-05db-45f0-99a3-539c362ef563 # Stage
+sortOrder: 1

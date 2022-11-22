@@ -1,5 +1,5 @@
 fieldLayouts:
-  43be4efb-9c14-412d-811b-6aec3dce84c3:
+  e7989bba-76f3-4554-918f-d1ad418f6064:
     tabs:
       -
         elementCondition: null
@@ -25,31 +25,19 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 5599a053-e6b1-49c7-a55e-3e1b50249724
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: 42ba97e6-8304-45bc-9fc7-c69cf07d793d # Algemenevoorwaarden 
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 7630ade4-9f6b-48db-9f16-88b4004a2f54
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: ba0c7541-43d5-4543-9523-ee9efad75a4c
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: b77e2ecd-3086-4c46-b6ab-263865c75076
+        uid: ac566931-ad44-4552-abdf-bba91d4899b9
         userCondition: null
-handle: voorwaarden
-hasTitleField: true
-name: 'Voorwaarden '
-section: 6611d210-e8e2-492d-9a7b-829ee16b727f # AlgemeneVoorwaarden
+fs: assets
+handle: public
+name: public
 sortOrder: 1
-titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+transformFs: ''
+transformSubpath: '@root/web/assets'

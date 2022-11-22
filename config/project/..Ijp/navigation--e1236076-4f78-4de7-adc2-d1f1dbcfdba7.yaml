@@ -1,0 +1,24 @@
+fieldLayouts:
+  bf039c66-0906-4460-8181-c59fc71afab4:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 68fc4b1b-ee3a-4402-a858-73ee024b6726 # Link Group 
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9a2b58dd-051d-4751-a2a5-c1d60633c256
+            userCondition: null
+            warning: null
+            width: 100
+        name: content
+        uid: da941a25-606b-4e8f-ac90-99fd69b00919
+        userCondition: null
+handle: navigation
+name: navigation
+sortOrder: 1

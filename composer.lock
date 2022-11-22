@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae92fe74d6a22869dd25851ebbd49af3",
+    "content-hash": "6edb95df437204c6fff89dc5010685cc",
     "packages": [
         {
             "name": "acclaro/translations",
@@ -594,6 +594,55 @@
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
             "time": "2022-11-17T17:49:32+00:00"
+        },
+        {
+            "name": "craftcms/craft",
+            "version": "2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/craftcms/craft.git",
+                "reference": "495f55302a1356a9a243cfb3f8af5fa8721e68ee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/craft/zipball/495f55302a1356a9a243cfb3f8af5fa8721e68ee",
+                "reference": "495f55302a1356a9a243cfb3f8af5fa8721e68ee",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.2.7",
+                "vlucas/phpdotenv": "^5.4.0"
+            },
+            "require-dev": {
+                "yiisoft/yii2-shell": "^2.0.3"
+            },
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "modules\\": "modules/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "0BSD"
+            ],
+            "description": "Craft CMS",
+            "homepage": "https://craftcms.com/",
+            "keywords": [
+                "Craft",
+                "cms",
+                "craftcms",
+                "project"
+            ],
+            "support": {
+                "docs": "https://craftcms.com/docs",
+                "email": "support@craftcms.com",
+                "forum": "https://craftcms.stackexchange.com/",
+                "issues": "https://github.com/craftcms/cms/issues",
+                "rss": "https://craftcms.com/changelog.rss",
+                "source": "https://github.com/craftcms/cms"
+            },
+            "time": "2022-10-27T15:08:22+00:00"
         },
         {
             "name": "craftcms/html-field",
@@ -6446,5 +6495,5 @@
     "platform-overrides": {
         "php": "8.0.2"
     },
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.1.0"
 }

@@ -1,4 +1,4 @@
-dateModified: 1669114183
+dateModified: 1669626177
 email:
   fromEmail: roy@perfectwebteam.nl
   fromName: Stage
@@ -217,7 +217,7 @@ plugins:
       includeDraftElementUsage: false
       includeRevisionElementUsage: false
       maxIncompleteSubmissionAge: 30
-      maxSentNotificationsAge: 0
+      maxSentNotificationsAge: 30
       pdfPaperOrientation: portrait
       pdfPaperSize: letter
       pluginName: Formie
@@ -251,7 +251,7 @@ system:
   name: Stage
   retryDuration: null
   schemaVersion: 4.0.0.9
-  timeZone: America/Los_Angeles
+  timeZone: Europe/Amsterdam
 users:
   allowPublicRegistration: false
   defaultGroup: null

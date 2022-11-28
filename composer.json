@@ -6,7 +6,7 @@
     "craftcms/redactor": "3.0.2",
     "pierrestoffe/craft-language-redirector": "^2.0",
     "sebastianlenz/linkfield": "2.1.4",
-    "verbb/formie": "^2.0",
+    "verbb/formie": "2.0.18",
     "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {

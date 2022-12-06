@@ -1,4 +1,4 @@
-dateModified: 1669626177
+dateModified: 1670340744
 email:
   fromEmail: roy@perfectwebteam.nl
   fromName: Stage
@@ -241,6 +241,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.3.0
+  stage:
+    edition: standard
+    enabled: true
+    schemaVersion: '1'
   typedlinkfield:
     edition: standard
     enabled: true

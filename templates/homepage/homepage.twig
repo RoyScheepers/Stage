@@ -19,17 +19,40 @@ class: 'ltr'
 
 <div id="main">
   <div class="container">
+
     <div class="mainContent">
       <div class="formulier">
         {% set form = craft.formie.forms.handle('kalender').one() %}
         {{ craft.formie.renderForm('kalender') }}
       </div>
+
     </div>
     <div class="mainContent">
       {% set previewImage = entry.previewImage.one() %}
       <img src="{{ previewImage.getUrl('') }}" alt="{{ previewImage.title }}">
     </div>
+    
   </div>
 </div>
 
+<script>
+  (() => {
+    fetch('/Api/available', {
+      data: {
+        from: '',
+        to: ''
+      },
+    }).then(x => x.json()).then(res => {
+      if (res.success) {
+// kan boeken
+      } else {
+// kan niet boeken
+      }
+    })
+  })();
+
+
+</script>
 {% endblock %}
+
+

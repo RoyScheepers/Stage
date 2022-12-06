@@ -1,0 +1,38 @@
+{
+    "name": "pwtstage/stage",
+    "description": "Description",
+    "type": "craft-plugin",
+    "version": "1",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "stage "
+    ],
+    "support": {
+        "docs": "???",
+        "issues": "???"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Roy ",
+            "homepage": "https://craft.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+          "pwtstage\\stage\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Stage ",
+        "handle": "stage",
+        "developer": "Roy ",
+        "developerUrl": "https://craft.com",
+        "documentationUrl": "???",
+        "changelogUrl": "???",
+        "class": "pwtstage\\stage\\Stage"
+    }
+}

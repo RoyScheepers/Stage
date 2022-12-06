@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e6861ca77476f9ceab541694d4df452",
+    "content-hash": "4a88333244c7e62eacb831b4c00ee0bd",
     "packages": [
         {
             "name": "acclaro/translations",
@@ -4369,6 +4369,54 @@
                 "source": "https://github.com/php-fig/simple-cache/tree/3.0.0"
             },
             "time": "2021-10-29T13:26:27+00:00"
+        },
+        {
+            "name": "pwtstage/stage",
+            "version": "1",
+            "dist": {
+                "type": "path",
+                "url": "./plugins/stage",
+                "reference": "b56a4b77eee752137107c1d433ae27856ff7c6aa"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Stage ",
+                "handle": "stage",
+                "developer": "Roy ",
+                "developerUrl": "https://craft.com",
+                "documentationUrl": "???",
+                "changelogUrl": "???",
+                "class": "pwtstage\\stage\\Stage"
+            },
+            "autoload": {
+                "psr-4": {
+                    "pwtstage\\stage\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roy ",
+                    "homepage": "https://craft.com"
+                }
+            ],
+            "description": "Description",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "stage "
+            ],
+            "support": {
+                "docs": "???",
+                "issues": "???"
+            },
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "ralouphie/getallheaders",
@@ -9000,9 +9048,9 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": [],
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],

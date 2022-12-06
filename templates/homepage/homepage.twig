@@ -16,17 +16,20 @@ class: 'ltr'
 
 
 {% block body %}
-<div class="center">
-  <div id="image">
-    <div id="main">
-      <div class="content">
-        {% set previewImage = entry.previewImage.one() %}
 
-        <img src="{{ previewImage.getUrl('') }}" alt="{{ previewImage.title }}">
-
+<div id="main">
+  <div class="container">
+    <div class="mainContent">
+      <div class="formulier">
+        {% set form = craft.formie.forms.handle('kalender').one() %}
+        {{ craft.formie.renderForm('kalender') }}
       </div>
     </div>
-
+    <div class="mainContent">
+      {% set previewImage = entry.previewImage.one() %}
+      <img src="{{ previewImage.getUrl('') }}" alt="{{ previewImage.title }}">
+    </div>
   </div>
 </div>
+
 {% endblock %}

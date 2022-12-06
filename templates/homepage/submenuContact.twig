@@ -16,8 +16,8 @@ class: 'ltr'
 
 
 {% block body %}
-<div class="grid-container ">
-    <div class="Mailer">
+<div class="grid-container">
+    <div class="formulier">
         {% set form = craft.formie.forms.handle('emailer').one() %}
         {{ craft.formie.renderForm('emailer') }}
     </div>

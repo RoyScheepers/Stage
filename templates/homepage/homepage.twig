@@ -46,11 +46,14 @@ class: 'ltr'
     fields.forEach((a) => a.addEventListener('change', () => {
       if (fields.filter(field => field.value).length === fields.length) {
         const fd = new FormData(document.querySelector('form'))
+        // loader 
         fetch('/Api/available', {
           // inbouwen een wacht melding 
+          // eventhandlers 
+          // response heeft een .final die altijd wordt uitgevoerd, eventueel gebruiken om de loader weg te halen 
           method: 'POST',
           body: fd,
-        }).then(response => response.json).then((res) => {
+        }).then(response => response.json()).then((res) => {
           if (res.success) {
             hiddenFields.forEach(e => e.classList.remove('fui-hidden'))
           } else {

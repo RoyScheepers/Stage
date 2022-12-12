@@ -37,7 +37,6 @@ use craft\web\Controller;
  */
 class DefaultController extends Controller
 {
-
     // Protected Properties
     // =========================================================================
 
@@ -59,16 +58,14 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        $result = 'Welcome to the DefaultController actionIndex() method';
+        $result = '';
 
         return $this->asJson(
             [
                 'status' => 200,
                 'message' => $result,
-                'success' => random_int(1, 1000) <
+                'success' => random_int(1, 20) < 6
             ]
         );
     }
-
- 
 }

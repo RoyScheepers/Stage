@@ -22,7 +22,7 @@ class: 'ltr'
 
     <div class="mainContent">
       <div class="formulier">
-        {% set form = craft.formie.forms.handle('kalender').one() %}
+        {% set form = craft.formie.forms.handle('kalender').all() %}
         {{ craft.formie.renderForm('kalender') }}
       </div>
 
@@ -31,28 +31,40 @@ class: 'ltr'
       {% set previewImage = entry.previewImage.one() %}
       <img src="{{ previewImage.getUrl('') }}" alt="{{ previewImage.title }}">
     </div>
-    
+
   </div>
 </div>
 
+
+
 <script>
+
   (() => {
-    fetch('/Api/available', {
-      data: {
-        from: '',
-        to: ''
-      },
-    }).then(x => x.json()).then(res => {
-      if (res.success) {
-// kan boeken
-      } else {
-// kan niet boeken
+    const fields = Array.from(document.querySelectorAll('[name="fields[aankomstDatum][datetime]"], [name="fields[vertrekDatum][datetime]"], [name="fields[drop]"]'));
+    const hiddenFields = Array.from(document.querySelectorAll('.fui-hidden'));
+
+    fields.forEach((a) => a.addEventListener('change', () => {
+      if (fields.filter(field => field.value).length === fields.length) {
+        const fd = new FormData(document.querySelector('form'))
+        fetch('/Api/available', {
+          // inbouwen een wacht melding 
+          method: 'POST',
+          body: fd,
+        }).then(response => response.json).then((res) => {
+          if (res.success) {
+            hiddenFields.forEach(e => e.classList.remove('fui-hidden'))
+          } else {
+            hiddenFields.forEach(e => e.classList.add('fui-hidden'))
+          }
+        })
       }
     })
-  })();
-
+    )
+  }
+  )();
 
 </script>
+
+
+
 {% endblock %}
-
-

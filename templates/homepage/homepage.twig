@@ -46,7 +46,7 @@ class: 'ltr'
         const fd = new FormData(document.querySelector('form'))
         fd.delete('action');
         document.getElementById("loader__wrapper").classList.remove('hidden')
-       fields.setAttribute('keyup', 'disabled');
+       //fields.setAttribute('disabled', true);
         //javascript disable elements
         fetch('/Api/available', {
           method: 'POST',

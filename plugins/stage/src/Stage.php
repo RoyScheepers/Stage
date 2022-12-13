@@ -96,7 +96,7 @@ class Stage extends Plugin
             UrlManager::class,
             UrlManager::EVENT_REGISTER_SITE_URL_RULES,
             function (RegisterUrlRulesEvent $event) {
-                $event->rules['Api/available'] = 'stage/default';
+                $event->rules['Api/available'] = 'stage/default/index';
             }
         );
 
@@ -106,17 +106,6 @@ class Stage extends Plugin
             UrlManager::EVENT_REGISTER_CP_URL_RULES,
             function (RegisterUrlRulesEvent $event) {
                 $event->rules['cpActionTrigger1'] = 'stage/default/do-something';
-            }
-        );
-
-        // Do something after we're installed
-        Event::on(
-            Plugins::class,
-            Plugins::EVENT_AFTER_INSTALL_PLUGIN,
-            function (PluginEvent $event) {
-                if ($event->plugin === $this) {
-                    // We were just installed
-                }
             }
         );
 

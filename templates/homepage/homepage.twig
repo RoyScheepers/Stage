@@ -4,7 +4,7 @@
 
 {% set bodyAttributes = {
 class: 'ltr'
-} %}
+}%}
 
 {% block head %}
 {{ parent() }}
@@ -14,60 +14,59 @@ class: 'ltr'
 {{ parent() }}
 {% endblock %}
 
-
 {% block body %}
 
 <div id="main">
-  <div class="container">
 
+  <div class="container">
     <div class="mainContent">
       <div class="formulier">
-        {% set form = craft.formie.forms.handle('kalender').all() %}
-        {{ craft.formie.renderForm('kalender') }}
+        <div class="loader__wrapper hidden" id="loader__wrapper">
+        <div class="loader"> </div>
       </div>
-
+        <div id="formulier">
+          {% set form = craft.formie.forms.handle('kalender').all() %}
+          {{ craft.formie.renderForm('kalender') }}
+        </div>
+      </div>
     </div>
     <div class="mainContent">
       {% set previewImage = entry.previewImage.one() %}
       <img src="{{ previewImage.getUrl('') }}" alt="{{ previewImage.title }}">
     </div>
-
   </div>
 </div>
 
-
-
 <script>
-
   (() => {
-    const fields = Array.from(document.querySelectorAll('[name="fields[aankomstDatum][datetime]"], [name="fields[vertrekDatum][datetime]"], [name="fields[drop]"]'));
+    const fields = Array.from(document.querySelectorAll(' [name="fields[aankomstDatum][datetime]"], [name="fields[vertrekDatum][datetime]"], [name="fields[drop]"]'));
     const hiddenFields = Array.from(document.querySelectorAll('.fui-hidden'));
-
     fields.forEach((a) => a.addEventListener('change', () => {
       if (fields.filter(field => field.value).length === fields.length) {
         const fd = new FormData(document.querySelector('form'))
-        // loader 
+        fd.delete('action');
+        document.getElementById("loader__wrapper").classList.remove('hidden')
+       fields.setAttribute('keyup', 'disabled');
+        //javascript disable elements
         fetch('/Api/available', {
-          // inbouwen een wacht melding 
-          // eventhandlers 
-          // response heeft een .final die altijd wordt uitgevoerd, eventueel gebruiken om de loader weg te halen 
           method: 'POST',
           body: fd,
         }).then(response => response.json()).then((res) => {
+          document.getElementById("loader__wrapper").classList.add('hidden')
+         // fields.setAttribute('enabled', 'enabled');
           if (res.success) {
             hiddenFields.forEach(e => e.classList.remove('fui-hidden'))
           } else {
             hiddenFields.forEach(e => e.classList.add('fui-hidden'))
           }
         })
+      } else {
+        hiddenFields.forEach(e => e.classList.add('fui-hidden'))
       }
     })
     )
   }
   )();
-
 </script>
-
-
 
 {% endblock %}

@@ -64,7 +64,7 @@ class DefaultController extends Controller
             [
                 'status' => 200,
                 'message' => $result,
-                'success' => random_int(1, 10) < 3
+                'success' => true
             ]
         );
     }

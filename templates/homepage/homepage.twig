@@ -43,9 +43,7 @@ class: 'ltr'
     const fields = Array.from(document.querySelectorAll(' [name="fields[aankomstDatum][datetime]"], [name="fields[vertrekDatum][datetime]"], [name="fields[drop]"]'));
     const hiddenFields = Array.from(document.querySelectorAll('.fui-hidden'));
     const Submit = Array.from(document.querySelectorAll('[data-submit-action="submit"]'))
-    
     Submit.forEach(e => e.disabled = true)
-
     fields.forEach((a) => a.addEventListener('change', () => {
       if (fields.filter(field => field.value).length === fields.length) {
         document.getElementById("loader__wrapper").classList.remove('hidden')
@@ -76,10 +74,7 @@ class: 'ltr'
       }
     }))
   }
-
   )();
-
-
 </script>
 
 {% endblock %}

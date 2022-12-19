@@ -39,10 +39,12 @@ class: 'ltr'
 
 <script>
   (() => {
-    
+    const allFields = Array.from(document.querySelectorAll('[name="fields[voornaam]"],[name="fields[achternaam]"],[name="fields[aantalPersonen]"],[name="fields[adres][address1]"],[name="fields[adres][address2]"],[name="fields[adres][city]"],[name="fields[adres][state]"], [name="fields[aankomstDatum][datetime]"], [name="fields[vertrekDatum][datetime]"], [name="fields[drop]"]'));
     const fields = Array.from(document.querySelectorAll(' [name="fields[aankomstDatum][datetime]"], [name="fields[vertrekDatum][datetime]"], [name="fields[drop]"]'));
-    const hiddenFields = Array.from(document.querySelectorAll('.fui-hidden, .submit'));
-    hiddenFields.forEach(e => e.classList.remove('submit'))
+    const hiddenFields = Array.from(document.querySelectorAll('.fui-hidden'));
+    const Submit = Array.from(document.querySelectorAll('[data-submit-action="submit"]'))
+    
+    Submit.forEach(e => e.disabled = true)
 
     fields.forEach((a) => a.addEventListener('change', () => {
       if (fields.filter(field => field.value).length === fields.length) {
@@ -59,15 +61,24 @@ class: 'ltr'
           if (res.success) {
             hiddenFields.forEach(e => e.classList.remove('fui-hidden'))
           }
-        })     
+        })
       } else {
         hiddenFields.forEach(e => e.classList.add('fui-hidden'))
+        Submit.forEach(e => e.disabled = true)
       }
     })
-    ) 
-  }  
+    )
+    allFields.forEach((a) => a.addEventListener('change', () => {
+      if (allFields.filter(field => field.value).length === allFields.length) {
+        Submit.forEach(e => e.disabled = false)
+      } else {
+        Submit.forEach(e => e.disabled = true)
+      }
+    }))
+  }
+
   )();
-  
+
 
 </script>
 

@@ -22,8 +22,8 @@ class: 'ltr'
     <div class="mainContent">
       <div class="formulier">
         <div class="loader__wrapper hidden" id="loader__wrapper">
-        <div class="loader"> </div>
-      </div>
+          <div class="loader"></div>
+        </div>
         <div id="formulier">
           {% set form = craft.formie.forms.handle('kalender').all() %}
           {{ craft.formie.renderForm('kalender') }}
@@ -39,41 +39,36 @@ class: 'ltr'
 
 <script>
   (() => {
+    
     const fields = Array.from(document.querySelectorAll(' [name="fields[aankomstDatum][datetime]"], [name="fields[vertrekDatum][datetime]"], [name="fields[drop]"]'));
-    const hiddenFields = Array.from(document.querySelectorAll('.fui-hidden'));
+    const hiddenFields = Array.from(document.querySelectorAll('.fui-hidden, .submit'));
+    hiddenFields.forEach(e => e.classList.remove('submit'))
+
     fields.forEach((a) => a.addEventListener('change', () => {
-      if (fields.filter(field => field.value).length === fields.length) {        
-        const fd = new FormData(document.querySelector('form'))       
-        fd.delete('action');
+      if (fields.filter(field => field.value).length === fields.length) {
         document.getElementById("loader__wrapper").classList.remove('hidden')
-        
-     //test 
-    //test2
-     
-       
+        const fd = new FormData(document.querySelector('form'))
+        fd.delete('action');
+        fields.forEach(element => element.disabled = true)
         fetch('/Api/available', {
           method: 'POST',
           body: fd,
         }).then(response => response.json()).then((res) => {
           document.getElementById("loader__wrapper").classList.add('hidden')
-        
-          fields.disabled = false
-
-        
-
+          fields.forEach(element => element.disabled = false);
           if (res.success) {
             hiddenFields.forEach(e => e.classList.remove('fui-hidden'))
-          } else {
-            hiddenFields.forEach(e => e.classList.add('fui-hidden'))
           }
-        })
+        })     
       } else {
         hiddenFields.forEach(e => e.classList.add('fui-hidden'))
       }
     })
-    )
-  }
+    ) 
+  }  
   )();
+  
+
 </script>
 
 {% endblock %}

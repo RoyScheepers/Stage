@@ -42,18 +42,25 @@ class: 'ltr'
     const fields = Array.from(document.querySelectorAll(' [name="fields[aankomstDatum][datetime]"], [name="fields[vertrekDatum][datetime]"], [name="fields[drop]"]'));
     const hiddenFields = Array.from(document.querySelectorAll('.fui-hidden'));
     fields.forEach((a) => a.addEventListener('change', () => {
-      if (fields.filter(field => field.value).length === fields.length) {
-        const fd = new FormData(document.querySelector('form'))
+      if (fields.filter(field => field.value).length === fields.length) {        
+        const fd = new FormData(document.querySelector('form'))       
         fd.delete('action');
         document.getElementById("loader__wrapper").classList.remove('hidden')
-       //fields.setAttribute('disabled', true);
-        //javascript disable elements
+        
+     //test 
+    
+     
+       
         fetch('/Api/available', {
           method: 'POST',
           body: fd,
         }).then(response => response.json()).then((res) => {
           document.getElementById("loader__wrapper").classList.add('hidden')
-         // fields.setAttribute('enabled', 'enabled');
+        
+          fields.disabled = false
+
+        
+
           if (res.success) {
             hiddenFields.forEach(e => e.classList.remove('fui-hidden'))
           } else {

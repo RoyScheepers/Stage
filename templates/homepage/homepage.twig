@@ -56,6 +56,7 @@ class: 'ltr'
         fetch('/Api/available', {
           method: 'POST',
           body: fd,
+
         }).then(response => response.json()).then((res) => {
           document.getElementById("loader__wrapper").classList.add('hidden')          
           if (res.success) {

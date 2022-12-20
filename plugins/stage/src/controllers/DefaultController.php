@@ -10,6 +10,7 @@
 
 namespace pwtstage\stage\controllers;
 
+use GrahamCampbell\ResultType\Success;
 use pwtstage\stage\Stage;
 
 use Craft;
@@ -45,7 +46,7 @@ class DefaultController extends Controller
      *         The actions must be in 'kebab-case'
      * @access protected
      */
-    protected array|int|bool $allowAnonymous = ['index'];
+    protected array |int|bool $allowAnonymous = ['index'];
 
     // Public Methods
     // =========================================================================
@@ -59,13 +60,24 @@ class DefaultController extends Controller
     public function actionIndex()
     {
         $result = '';
-
+        
+        //Craft::$app->db->createCommand('SELECT field_drop_hxidtydg, field_aankomstDatum_ggcaqlwk, field_vertrekDatum1_myyqusai FROM fmc_kalender')->queryAll(Stage::fetch_assoc);
+        //while ($row = $result->FETCH_ASSOC()){
+      //  }
         return $this->asJson(
             [
                 'status' => 200,
-                'message' => $result,
-                'success' => random_int(1, 20) < 10 
+                'message' => $result,                
+                'success' => random_int(1,30) < 20 
+
+                // db in docker
+                // database field id field_drop_hxidtydg, field_aankomstDatum_ggcaqlwk, field_vertrekDatum1_myyqusai
+                // database table fmc_kalender
+                // if value name[fields//formulier] === fields uit de database return false 
+                // else true 
             ]
-        );
+        );   
     }
+
+   
 }

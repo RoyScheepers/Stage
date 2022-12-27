@@ -39,6 +39,8 @@ use PDO;
  */
 class DefaultController extends Controller
 {
+
+
     // Protected Properties
     // =========================================================================
 
@@ -60,16 +62,33 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        $result = '';
         $success = Craft::$app->db->createCommand('SELECT field_drop_hxidtydg,field_aankomstDatum_ggcaqlwk,field_vertrekDatum_obhljofn FROM fmc_kalender')->queryAll(PDO::FETCH_ASSOC);
+      
+      
+      $v = $_POST['fields'] ;
+      $x = $v['aankomstDatum'];
+        $z = $x['datetime'];
+
+        $q = $_POST['fields'] ;
+        $w = $q['vertrekDatum'];
+          $e = $w['datetime'];
+
+          $r = $_POST['fields'] ;
+        $t = $r['drop'];
+         
+      
 
         return $this->asJson(
             [
                 'status' => 200,
-                'message' => $result,
+                'message' => $z,$e,$t,
                 'success' => $success
             ]
         );
     }
 
-}
+} 
+
+/* 
+var_dump($_POST);die();
+*/

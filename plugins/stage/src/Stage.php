@@ -72,6 +72,7 @@ class Stage extends Plugin
      */
     public bool $hasCpSection = false;
 
+    
     // Public Methods
     // =========================================================================
 
@@ -86,10 +87,12 @@ class Stage extends Plugin
      * you do not need to load it in your init() method.
      *
      */
+    
     public function init()
     {
         parent::init();
         self::$plugin = $this;
+        
 
         // Register our site routes
         Event::on(
@@ -108,7 +111,7 @@ class Stage extends Plugin
                 $event->rules['cpActionTrigger1'] = 'stage/default/do-something';
             }
         );
-
+           
 /**
  * Logging in Craft involves using one of the following methods:
  *

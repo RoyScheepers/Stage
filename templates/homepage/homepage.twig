@@ -60,6 +60,7 @@ class: 'ltr'
         }).then(response => response.json()).then((res) => {
           document.getElementById("loader__wrapper").classList.add('hidden')          
           if (res.success) {
+           // console.log(fields.value)
             // als er plek is dan komen de rest van de velden tevoorschijn 
             hiddenFields.forEach(e => e.classList.remove('fui-hidden'))
           } else {
@@ -87,3 +88,6 @@ class: 'ltr'
 </script>
 
 {% endblock %}
+
+
+

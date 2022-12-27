@@ -15,6 +15,7 @@ use pwtstage\stage\Stage;
 
 use Craft;
 use craft\web\Controller;
+use PDO;
 
 /**
  * Default Controller
@@ -60,24 +61,15 @@ class DefaultController extends Controller
     public function actionIndex()
     {
         $result = '';
-        
-        //Craft::$app->db->createCommand('SELECT field_drop_hxidtydg, field_aankomstDatum_ggcaqlwk, field_vertrekDatum1_myyqusai FROM fmc_kalender')->queryAll(Stage::fetch_assoc);
-        //while ($row = $result->FETCH_ASSOC()){
-      //  }
+        $success = Craft::$app->db->createCommand('SELECT field_drop_hxidtydg,field_aankomstDatum_ggcaqlwk,field_vertrekDatum_obhljofn FROM fmc_kalender')->queryAll(PDO::FETCH_ASSOC);
+
         return $this->asJson(
             [
                 'status' => 200,
-                'message' => $result,                
-                'success' => random_int(1,30) < 20 
-
-                // db in docker
-                // database field id field_drop_hxidtydg, field_aankomstDatum_ggcaqlwk, field_vertrekDatum1_myyqusai
-                // database table fmc_kalender
-                // if value name[fields//formulier] === fields uit de database return false 
-                // else true 
+                'message' => $result,
+                'success' => $success
             ]
-        );   
+        );
     }
 
-   
 }

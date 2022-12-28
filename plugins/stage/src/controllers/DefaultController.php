@@ -65,23 +65,26 @@ class DefaultController extends Controller
         $success = Craft::$app->db->createCommand('SELECT field_drop_hxidtydg,field_aankomstDatum_ggcaqlwk,field_vertrekDatum_obhljofn FROM fmc_kalender')->queryAll(PDO::FETCH_ASSOC);
       
       
-      $v = $_POST['fields'] ;
+      $v = $_POST['fields']  ;
+      //. $_POST['aankomstDatum'] . $_POST['datetime']
       $x = $v['aankomstDatum'];
-        $z = $x['datetime'];
+      $z = $x['datetime'];
 
-        $q = $_POST['fields'] ;
-        $w = $q['vertrekDatum'];
+        
+        $w = $v['vertrekDatum'];
           $e = $w['datetime'];
 
-          $r = $_POST['fields'] ;
-        $t = $r['drop'];
+          
+        $t = $v['drop'];
          
       
 
         return $this->asJson(
             [
                 'status' => 200,
-                'message' => $z,$e,$t,
+                'message' => $z, 
+                'message2' => $e, 
+                'message3' => $t, 
                 'success' => $success
             ]
         );

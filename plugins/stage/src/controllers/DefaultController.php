@@ -62,36 +62,39 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        $success = Craft::$app->db->createCommand('SELECT field_drop_hxidtydg,field_aankomstDatum_ggcaqlwk,field_vertrekDatum_obhljofn FROM fmc_kalender')->queryAll(PDO::FETCH_ASSOC);
-      
-      
-      $v = $_POST['fields']  ;
-      //. $_POST['aankomstDatum'] . $_POST['datetime']
-      $x = $v['aankomstDatum'];
-      $z = $x['datetime'];
 
+      $fields = Craft::$app->getRequest()->getRequiredParam('fields');
+      $aankomstDatum = $fields['aankomstDatum']['datetime'];
+      $vertrekDatum = $fields['vertrekDatum']['datetime'];
+      $dropField = $fields['drop'];  
+
+      $success = Craft::$app->db->createCommand('select count(*) from fmc_kalender
+         WHERE field_aankomstDatum_ggcaqlwk >= :aankomstDatum
+          AND field_vertrekDatum_obhljofn <= :vertrekDatum
+          AND field_drop_hxidtydg = :dropField')          
+          ->bindValue(':aankomstDatum', $aankomstDatum)
+          ->bindValue(':vertrekDatum', $vertrekDatum)
+          ->bindValue(':dropField', $dropField)
+          ->queryScalar(); 
+  
         
-        $w = $v['vertrekDatum'];
-          $e = $w['datetime'];
-
-          
-        $t = $v['drop'];
-         
-      
-
-        return $this->asJson(
+   if($success === 1){
+    return $this->asJson(
             [
-                'status' => 200,
-                'message' => $z, 
-                'message2' => $e, 
-                'message3' => $t, 
-                'success' => $success
+                'status' => 200,                                            
+                'success' => TRUE,                
             ]
         );
+      } else {
+      return $this->asJson(
+        [
+          'status' => 200, 
+          'noSuccess' => TRUE,         
+        ]
+      );
+      } 
     }
 
-} 
+}
 
-/* 
-var_dump($_POST);die();
-*/
+

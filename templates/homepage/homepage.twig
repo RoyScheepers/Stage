@@ -42,35 +42,36 @@ class: 'ltr'
     const allFields = Array.from(document.querySelectorAll('[name="fields[voornaam]"],[name="fields[achternaam]"],[name="fields[aantalPersonen]"],[name="fields[adres][address1]"],[name="fields[adres][address2]"],[name="fields[adres][city]"],[name="fields[adres][state]"], [name="fields[aankomstDatum][datetime]"], [name="fields[vertrekDatum][datetime]"], [name="fields[drop]"]'));
     const fields = Array.from(document.querySelectorAll(' [name="fields[aankomstDatum][datetime]"], [name="fields[vertrekDatum][datetime]"], [name="fields[drop]"]'));
     const hiddenFields = Array.from(document.querySelectorAll('.fui-hidden'));
-    const Submit = Array.from(document.querySelectorAll('[data-submit-action="submit"]'))
+    const inputFields = Array.from(document.querySelectorAll('.fui-input'));
+    const Submit = Array.from(document.querySelectorAll('[data-submit-action="submit"]'));
     Submit.forEach(e => e.disabled = true)
 
     fields.forEach((a) => a.addEventListener('change', () => {
-      
       // als alle ingevulde velden voldoen aan een true value dan komen de rest van de velden tevoorschijn 
       if (fields.filter(field => field.value).length === fields.length) {
-        document.getElementById("loader__wrapper").classList.remove('hidden')
-        fields.forEach(element => element.hidden = true) 
+      document.getElementById("loader__wrapper").classList.remove('hidden')       
+      //inputFields.forEach(element => element.readOnly = true)  
         const fd = new FormData(document.querySelector('form'))
-        fd.delete('action');    
+        fd.delete('action');
         fetch('/Api/available', {
           method: 'POST',
           body: fd,
 
         }).then(response => response.json()).then((res) => {
-          document.getElementById("loader__wrapper").classList.add('hidden')          
+          document.getElementById("loader__wrapper").classList.add('hidden')
           if (res.success) {
-           // console.log(fields.value)
+            // console.log(fields.value)
             // als er plek is dan komen de rest van de velden tevoorschijn 
             hiddenFields.forEach(e => e.classList.remove('fui-hidden'))
-          } else {
+          } else if (res.noSuccess) {
+            document.getElementById("loader__wrapper").classList.add('hidden')
             // als er een andere plek of datum gekozen en er is geen plek dan verbergen de velden weer 
             hiddenFields.forEach(e => e.classList.add('fui-hidden'))
           }
         })
       } else {
         // als niet alle ingevulde velden voldoen aan een true value dan verbergen alle velden weer 
-        hiddenFields.forEach(e => e.classList.add('fui-hidden'))        
+        hiddenFields.forEach(e => e.classList.add('fui-hidden'))
       }
     })
     )
@@ -88,6 +89,3 @@ class: 'ltr'
 </script>
 
 {% endblock %}
-
-
-

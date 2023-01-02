@@ -67,29 +67,37 @@ class DefaultController extends Controller
       $aankomstDatum = $fields['aankomstDatum']['datetime'];
       $vertrekDatum = $fields['vertrekDatum']['datetime'];
       $dropField = $fields['drop'];  
+/*
 
-      $success = Craft::$app->db->createCommand('select count(*) from fmc_kalender
-         WHERE field_aankomstDatum_ggcaqlwk >= :aankomstDatum
-          AND field_vertrekDatum_obhljofn <= :vertrekDatum
-          AND field_drop_hxidtydg = :dropField')          
+     // origineel
+      $dataQuery = Craft::$app->db->createCommand('select count(*) from fmc_kalender
+         )          
           ->bindValue(':aankomstDatum', $aankomstDatum)
           ->bindValue(':vertrekDatum', $vertrekDatum)
           ->bindValue(':dropField', $dropField)
           ->queryScalar(); 
-  
+ */
+
+  $dataQuery = Craft::$app->db->createCommand('select count(*) from fmc_kalender
+  WHERE field_aankomstDatum_ggcaqlwk = :aankomstDatum')          
+   ->bindValue(':aankomstDatum', $aankomstDatum)  
+   ->queryScalar(); 
+
         
-   if($success === 1){
+   if($dataQuery !== 1){
     return $this->asJson(
             [
-                'status' => 200,                                            
-                'success' => TRUE,                
+                'status' => 200, 
+                'message' => $dataQuery,                                           
+                   'success' => TRUE,          
             ]
         );
       } else {
       return $this->asJson(
         [
           'status' => 200, 
-          'noSuccess' => TRUE,         
+            'noSuccess' => TRUE,
+                 
         ]
       );
       } 

@@ -15,7 +15,7 @@ use pwtstage\stage\Stage;
 
 use Craft;
 use craft\web\Controller;
-use PDO;
+
 
 /**
  * Default Controller

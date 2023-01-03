@@ -41,68 +41,71 @@ class DefaultController extends Controller
 {
 
 
-    // Protected Properties
-    // =========================================================================
+  // Protected Properties
+  // =========================================================================
 
-    /**
-     * @var    bool|array Allows anonymous access to this controller's actions.
-     *         The actions must be in 'kebab-case'
-     * @access protected
-     */
-    protected array |int|bool $allowAnonymous = ['index'];
+  /**
+   * @var    bool|array Allows anonymous access to this controller's actions.
+   *         The actions must be in 'kebab-case'
+   * @access protected
+   */
+  protected array |int|bool $allowAnonymous = ['index'];
 
-    // Public Methods
-    // =========================================================================
+  // Public Methods
+  // =========================================================================
 
-    /**
-     * Handle a request going to our plugin's index action URL,
-     * e.g.: actions/stage/default
-     *
-     * @return mixed
-     */
-    public function actionIndex()
-    {
+  /**
+   * Handle a request going to our plugin's index action URL,
+   * e.g.: actions/stage/default
+   *
+   * @return mixed
+   */
+  public function actionIndex()
+  {
 
-      $fields = Craft::$app->getRequest()->getRequiredParam('fields');
-      $aankomstDatum = $fields['aankomstDatum']['datetime'];
-      $vertrekDatum = $fields['vertrekDatum']['datetime'];
-      $dropField = $fields['drop'];  
-/*
+    $fields = Craft::$app->getRequest()->getRequiredParam('fields');
+    $aankomstDatum = $fields['aankomstDatum']['datetime'];
+    $vertrekDatum = $fields['vertrekDatum']['datetime'];
+    $dropField = $fields['drop'];
 
-     // origineel
-      $dataQuery = Craft::$app->db->createCommand('select count(*) from fmc_kalender
-         )          
-          ->bindValue(':aankomstDatum', $aankomstDatum)
-          ->bindValue(':vertrekDatum', $vertrekDatum)
-          ->bindValue(':dropField', $dropField)
-          ->queryScalar(); 
- */
+    $dataQuery = Craft::$app->db->createCommand(' select count(*) from fmc_kalender
+  WHERE field_drop_hxidtydg = :dropField 
+  -- aankomst 
+  and ((:aankomstDatum  >= field_aankomstDatum_ggcaqlwk  
+  and :aankomstDatum < field_vertrekDatum_obhljofn) 
+  -- vertrek 
+  or ( :vertrekDatum  > field_aankomstDatum_ggcaqlwk  
+  and :vertrekDatum <= field_vertrekDatum_obhljofn )
+  -- aankomst datum tussen boeking 
+  -- vertrek datum tussen boeking 
+  or (
+    field_aankomstDatum_ggcaqlwk >=  :aankomstDatum and 
+    field_vertrekDatum_obhljofn  <= :vertrekDatum
+       ))')
+      ->bindValue(':aankomstDatum', $aankomstDatum)
+      ->bindValue(':vertrekDatum', $vertrekDatum)
+      ->bindValue(':dropField', $dropField)
+      ->queryScalar();
 
-  $dataQuery = Craft::$app->db->createCommand('select count(*) from fmc_kalender
-  WHERE field_aankomstDatum_ggcaqlwk = :aankomstDatum')          
-   ->bindValue(':aankomstDatum', $aankomstDatum)  
-   ->queryScalar(); 
 
-        
-   if($dataQuery !== 1){
-    return $this->asJson(
-            [
-                'status' => 200, 
-                'message' => $dataQuery,                                           
-                   'success' => TRUE,          
-            ]
-        );
-      } else {
+    if ($dataQuery === 0) {
       return $this->asJson(
         [
-          'status' => 200, 
-            'noSuccess' => TRUE,
-                 
+          'status' => 200,
+          'message' => $dataQuery,
+          'success' => TRUE,
         ]
       );
-      } 
+    } else {
+      return $this->asJson(
+        [
+          'status' => 200,
+          'noSuccess' => TRUE,
+          'message' => $dataQuery,
+
+        ]
+      );
     }
+  }
 
 }
-
-

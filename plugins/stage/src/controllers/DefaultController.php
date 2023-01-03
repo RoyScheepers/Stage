@@ -69,30 +69,29 @@ class DefaultController extends Controller
     $dropField = $fields['drop'];
 
     $dataQuery = Craft::$app->db->createCommand(' select count(*) from fmc_kalender
-  WHERE field_drop_hxidtydg = :dropField 
-  -- aankomst 
-  and ((:aankomstDatum  >= field_aankomstDatum_ggcaqlwk  
-  and :aankomstDatum < field_vertrekDatum_obhljofn) 
-  -- vertrek 
-  or ( :vertrekDatum  > field_aankomstDatum_ggcaqlwk  
-  and :vertrekDatum <= field_vertrekDatum_obhljofn )
-  -- aankomst datum tussen boeking 
-  -- vertrek datum tussen boeking 
-  or (
-    field_aankomstDatum_ggcaqlwk >=  :aankomstDatum and 
-    field_vertrekDatum_obhljofn  <= :vertrekDatum
-       ))')
-      ->bindValue(':aankomstDatum', $aankomstDatum)
-      ->bindValue(':vertrekDatum', $vertrekDatum)
-      ->bindValue(':dropField', $dropField)
-      ->queryScalar();
+        WHERE field_drop_hxidtydg = :dropField 
+        -- aankomst 
+        and ((:aankomstDatum  >= field_aankomstDatum_ggcaqlwk  
+        and :aankomstDatum < field_vertrekDatum_obhljofn) 
+        -- vertrek 
+        or ( :vertrekDatum  > field_aankomstDatum_ggcaqlwk  
+        and :vertrekDatum <= field_vertrekDatum_obhljofn )
+        -- aankomst datum tussen boeking 
+        -- vertrek datum tussen boeking 
+        or (
+          field_aankomstDatum_ggcaqlwk >=  :aankomstDatum and 
+          field_vertrekDatum_obhljofn  <= :vertrekDatum
+            ))')
+            ->bindValue(':aankomstDatum', $aankomstDatum)
+            ->bindValue(':vertrekDatum', $vertrekDatum)
+            ->bindValue(':dropField', $dropField)
+            ->queryScalar();
 
 
     if ($dataQuery === 0) {
       return $this->asJson(
         [
-          'status' => 200,
-          'message' => $dataQuery,
+          'status' => 200,          
           'success' => TRUE,
         ]
       );
@@ -100,9 +99,7 @@ class DefaultController extends Controller
       return $this->asJson(
         [
           'status' => 200,
-          'noSuccess' => TRUE,
-          'message' => $dataQuery,
-
+          'noSuccess' => TRUE, 
         ]
       );
     }

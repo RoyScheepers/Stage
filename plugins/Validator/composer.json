@@ -1,0 +1,41 @@
+{
+    "name": "pwtvalidator/validator",
+    "description": "validator",
+    "type": "craft-plugin",
+    "version": "1",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "validator"
+    ],
+    "support": {
+        "docs": "???",
+        "issues": "???"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "roy",
+            "homepage": "https://craft.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "pwtvalidator\\validator\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "validator",
+        "handle": "validator",
+        "developer": "roy",
+        "developerUrl": "https://craft.com",
+        "documentationUrl": "???",
+        "changelogUrl": "???",
+        "class": "pwtvalidator\\validator\\Validator"
+    }
+}

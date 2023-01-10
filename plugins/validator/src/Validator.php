@@ -15,6 +15,8 @@ use Craft;
 use craft\base\Plugin;
 use craft\services\Plugins;
 use craft\events\PluginEvent;
+use craft\web\UrlManager;
+use craft\events\RegisterUrlRulesEvent;
 
 use yii\base\Event;
 
@@ -42,17 +44,17 @@ class Validator extends Plugin
     /**
      * @var string
      */
-    public $schemaVersion = '1';
+    public string $schemaVersion = '1';
 
     /**
      * @var bool
      */
-    public $hasCpSettings = false;
+    public bool $hasCpSettings = false;
 
     /**
      * @var bool
      */
-    public $hasCpSection = false;
+    public bool $hasCpSection = false;
 
     // Public Methods
     // =========================================================================
@@ -64,13 +66,21 @@ class Validator extends Plugin
     {
         parent::init();
         self::$plugin = $this;
-
+        // Register our site routes
         Event::on(
-            Plugins::class,
-            Plugins::EVENT_AFTER_INSTALL_PLUGIN,
-            function (PluginEvent $event) {
-                if ($event->plugin === $this) {
-                }
+            UrlManager::class,
+            UrlManager::EVENT_REGISTER_SITE_URL_RULES,
+            function (RegisterUrlRulesEvent $event) {
+                $event->rules['Api/validator'] = 'validator/default/index';
+            }
+        );
+
+        // Register our CP routes
+        Event::on(
+            UrlManager::class,
+            UrlManager::EVENT_REGISTER_CP_URL_RULES,
+            function (RegisterUrlRulesEvent $event) {
+                $event->rules['cpActionTrigger1'] = 'validator/default/do-something';
             }
         );
 
@@ -84,7 +94,7 @@ class Validator extends Plugin
         );
     }
 
-    // Protected Methods
-    // =========================================================================
+// Protected Methods
+// =========================================================================
 
 }

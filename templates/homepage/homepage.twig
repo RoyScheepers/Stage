@@ -73,87 +73,47 @@ class: 'ltr'
       }
     })
     )
-    voornaam.forEach((a) => a.addEventListener('change', () => {
-      
-      // als alle velden zijn ingevuld dan kan de submit knop gebruikt worden 
-     // if (allFields.filter(field => field.value).length === allFields.length) 
-    if(voornaam.filter(field => field.value).value === voornaam.value)
-     {
-      console.log(voornaam);
-        Submit.forEach(e => e.disabled = false)
-      } else {
-        // als één of meer van de velden niet ingevuld zijn, of leeg gemaakt worden dan verbergt de submit knop weer
-        Submit.forEach(e => e.disabled = true)
+   //HIER TUSSEN 
+   allFields.forEach((a) => a.addEventListener('change', () => { 
+    if (allFields.filter(field => field.value).length === allFields.length) { 
+      document.getElementById("loader__wrapper").classList.remove('hidden')
+   const fd = new FormData(document.querySelector('form'))
+        fd.delete('action');
+        fetch('/Api/validator', {
+          method: 'POST',
+          body: fd,
+        }).then(response => response.json()).then((res) => {
+          document.getElementById("loader__wrapper").classList.add('hidden')
+         
+          if (res.success) {
+            // als er plek is dan komen de rest van de velden tevoorschijn 
+            Submit.forEach(e => e.disabled = false)
+          } if (res.noSuccess){
+            Submit.forEach(e => e.disabled = true)
+          }
+            
+        })
       }
-    }))
+      }))
+
+  // HIER TUSSEN 
   }
   )();
 </script>
 
 {% endblock %}
 {# 
-<script>
-
-allFields.forEach((a) => a.addEventListener('change', () => {
-  // als alle velden zijn ingevuld dan kan de submit knop gebruikt worden 
-  if (document.allFields.name=fields[voornaam].value == 'roy' ){
-    return false
-    Submit.forEach(e => e.disabled = true)
-  } 
-  if(achternaam == int/leestekkens) {
-    return false
-    Submit.forEach(e => e.disabled = true)
-  } 
-  if (aantalpersonen <= 0 ){
-    return false
-    Submit.forEach(e => e.disabled = true)
-  } 
-  if(straatnaam == int/ leestekens/ 'groter dan aantal characters'){
-    return false
-    Submit.forEach(e => e.disabled = true)
-  } 
-  if( postcode != int/tweeletters){ 
-    return false
-    Submit.forEach(e => e.disabled = true)
-  } 
-  if(woonplaast == int ){
-    return false
-    Submit.forEach(e => e.disabled = true)
-  }
-   return Submit.forEach(e => e.disabled = false)   
-}))
-
-</script>
-
-<script type = "text/javascript">
-  <!--
-     // Form validation code will come here.
-     function validate() {
-     
-        if( document.myForm.Name.value == "" ) {
-           alert( "Please provide your name!" );
-           document.myForm.Name.focus() ;
-           return false;
-        }
-        if( document.myForm.EMail.value == "" ) {
-           alert( "Please provide your Email!" );
-           document.myForm.EMail.focus() ;
-           return false;
-        }
-        if( document.myForm.Zip.value == "" || isNaN( document.myForm.Zip.value ) ||
-           document.myForm.Zip.value.length != 5 ) {
-           
-           alert( "Please provide a zip in the format #####." );
-           document.myForm.Zip.focus() ;
-           return false;
-        }
-        if( document.myForm.Country.value == "-1" ) {
-           alert( "Please provide your country!" );
-           return false;
-        }
-        return( true );
-     }
-  //-->
-</script>
-
+ allFields.forEach((a) => a.addEventListener('change', () => {
+      
+      // als alle velden zijn ingevuld dan kan de submit knop gebruikt worden 
+     // if (allFields.filter(field => field.value).length === allFields.length) 
+    if(allFields.filter(field => field.value).length === allFields.length)
+     {
+      
+        Submit.forEach(e => e.disabled = false)
+      } else {
+        // als één of meer van de velden niet ingevuld zijn, of leeg gemaakt worden dan verbergt de submit knop weer
+        Submit.forEach(e => e.disabled = true)
+      }
+    }))
 #}

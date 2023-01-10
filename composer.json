@@ -6,6 +6,7 @@
     "craftcms/redactor": "3.0.2",
     "pierrestoffe/craft-language-redirector": "^2.0",
     "pwtstage/stage": "^1.0",
+    "pwtvalidator/validator": "^1.0",
     "sebastianlenz/linkfield": "2.1.4",
     "verbb/formie": "2.0.18",
     "vlucas/phpdotenv": "^5.4.0"
@@ -36,10 +37,15 @@
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
-  "repositories": [
+  "repositories":[
     {
       "type": "path",
       "url": "./plugins/stage/"
+    },
+
+    {
+      "type": "path",
+      "url": "./plugins/validator/"
     }
   ]
 }

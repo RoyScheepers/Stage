@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4a88333244c7e62eacb831b4c00ee0bd",
+    "content-hash": "6ea4d051ee2dd2b2c6cd68a6210cef6f",
     "packages": [
         {
             "name": "acclaro/translations",
@@ -4409,6 +4409,57 @@
                 "craft-plugin",
                 "craftcms",
                 "stage "
+            ],
+            "support": {
+                "docs": "???",
+                "issues": "???"
+            },
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "pwtvalidator/validator",
+            "version": "1",
+            "dist": {
+                "type": "path",
+                "url": "./plugins/validator",
+                "reference": "5e4cef083b523b3ac2743eccee06fcfb44b857f8"
+            },
+            "require": {
+                "craftcms/cms": "^4.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "validator",
+                "handle": "validator",
+                "developer": "roy",
+                "developerUrl": "https://craft.com",
+                "documentationUrl": "???",
+                "changelogUrl": "???",
+                "class": "pwtvalidator\\validator\\Validator"
+            },
+            "autoload": {
+                "psr-4": {
+                    "pwtvalidator\\validator\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "roy",
+                    "homepage": "https://craft.com"
+                }
+            ],
+            "description": "validator",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "validator"
             ],
             "support": {
                 "docs": "???",

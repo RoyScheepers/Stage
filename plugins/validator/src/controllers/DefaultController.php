@@ -69,41 +69,39 @@ class DefaultController extends Controller
     $straatnaam = $fields["adres"]["address1"];
     $postcode = $fields["adres"]["zip"];
     $woonplaats = $fields["adres"]["state"];
-    
+
 
     $success = ['success' => TRUE];
-    $pattern = "/\w{0,20}/";
+    $pattern = "/\w{0,3}/";
 
     $noSuccess = $this->asJson(
       [
         'status' => 200,
         'noSuccess' => TRUE,
-        'message' => $fields,        
+        'message' => $pattern,
       ]
 
     );
-    
 
-    if (preg_match($pattern,$voornaam)) {      
+    if (preg_match($pattern, $voornaam)) {
       return $this->asJson($success);
-    }/*
-    elseif ($achternaam !== 'scheepers') {
-      return $noSuccess;
-    }
-    elseif ($aantalPersonen === '0') {
-      return $noSuccess;
-    }
-    elseif ($straatnaam !== 'straat') {
-      return $noSuccess;
-    }
-    elseif ($postcode !== '1244dd') {
-      // optional character ? before it like whitespace 
-      return $noSuccess;
-    }
-    elseif ($woonplaats !== 'bussum') {
-      return $noSuccess;
-    }*/
-     else {      
+    } /*
+     elseif ($achternaam !== 'scheepers') {
+     return $noSuccess;
+     }
+     elseif ($aantalPersonen === '0') {
+     return $noSuccess;
+     }
+     elseif ($straatnaam !== 'straat') {
+     return $noSuccess;
+     }
+     elseif ($postcode !== '1244dd') {
+     // optional character ? before it like whitespace 
+     return $noSuccess;
+     }
+     elseif ($woonplaats !== 'bussum') {
+     return $noSuccess;
+     }*/else {
       return $noSuccess;
     }
   }

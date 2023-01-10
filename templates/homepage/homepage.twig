@@ -44,8 +44,8 @@ class: 'ltr'
     const hiddenFields = Array.from(document.querySelectorAll('.fui-hidden'));
     const Submit = Array.from(document.querySelectorAll('[data-submit-action="submit"]'));
     const voornaam = Array.from(document.querySelectorAll('[name="fields[voornaam]"]'));
-    
-    
+
+
     Submit.forEach(e => e.disabled = true)
     fields.forEach((a) => a.addEventListener('change', () => {
       // als alle ingevulde velden voldoen aan een true value dan komen de rest van de velden tevoorschijn 
@@ -67,53 +67,32 @@ class: 'ltr'
             hiddenFields.forEach(e => e.classList.add('fui-hidden'))
           }
         })
-      } else {        
+      } else {
         // als niet alle ingevulde velden voldoen aan een true value dan verbergen alle velden weer {#  #}
         hiddenFields.forEach(e => e.classList.add('fui-hidden'))
       }
     })
     )
-   //HIER TUSSEN 
-   allFields.forEach((a) => a.addEventListener('change', () => { 
-    if (allFields.filter(field => field.value).length === allFields.length) { 
-      document.getElementById("loader__wrapper").classList.remove('hidden')
-   const fd = new FormData(document.querySelector('form'))
+    allFields.forEach((a) => a.addEventListener('change', () => {
+      if (allFields.filter(field => field.value).length === allFields.length) {
+        document.getElementById("loader__wrapper").classList.remove('hidden')
+        const fd = new FormData(document.querySelector('form'))
         fd.delete('action');
         fetch('/Api/validator', {
           method: 'POST',
           body: fd,
         }).then(response => response.json()).then((res) => {
           document.getElementById("loader__wrapper").classList.add('hidden')
-         
           if (res.success) {
-            // als er plek is dan komen de rest van de velden tevoorschijn 
             Submit.forEach(e => e.disabled = false)
-          } if (res.noSuccess){
+          } if (res.noSuccess) {
             Submit.forEach(e => e.disabled = true)
           }
-            
         })
       }
-      }))
-
-  // HIER TUSSEN 
+    }))
   }
   )();
 </script>
 
 {% endblock %}
-{# 
- allFields.forEach((a) => a.addEventListener('change', () => {
-      
-      // als alle velden zijn ingevuld dan kan de submit knop gebruikt worden 
-     // if (allFields.filter(field => field.value).length === allFields.length) 
-    if(allFields.filter(field => field.value).length === allFields.length)
-     {
-      
-        Submit.forEach(e => e.disabled = false)
-      } else {
-        // als één of meer van de velden niet ingevuld zijn, of leeg gemaakt worden dan verbergt de submit knop weer
-        Submit.forEach(e => e.disabled = true)
-      }
-    }))
-#}
